@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ':*)",
+      "Bash(python -m http.server 8080)",
+      "Bash(node -c js/lemmatizer.js)",
+      "Bash(node -c js/main.js)",
+      "Bash(node -c js/share.js)",
+      "Bash(netstat -ano)",
+      "Bash(tasklist /FI \"PID eq 16240\")",
+      "Bash(tasklist /FI \"PID eq 21444\")",
+      "Bash(tasklist)",
+      "Bash(tasklist //FI \"PID eq 16240\" //FI \"PID eq 21444\")",
+      "Bash(wmic process:*)",
+      "Bash(curl -L -o js/plotly-2.27.0.min.js \"https://cdn.plot.ly/plotly-2.27.0.min.js\")",
+      "Bash(mv:*)",
+      "Bash(taskkill //F //IM node.exe)",
+      "Bash(taskkill //F //IM python.exe)",
+      "Bash(npx http-server:*)",
+      "Bash(timeout 3)",
+      "Bash(curl -s -o NUL -w \"%{http_code}\" http://localhost:3000/index.html)",
+      "Bash(mv about-us.html about.html)",
+      "Bash(python3 -c \"from PIL import Image; print\\('PIL available'\\)\")",
+      "Bash(python -c \"from PIL import Image; print\\('PIL available'\\)\")"
+    ]
+  }
+}
