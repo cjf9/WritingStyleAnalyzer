@@ -46,15 +46,17 @@
 
     <script>
         // ============================================================
-        // POST FILES — Add a new line here each time you add a post
-        // Format: 'YYYY-MM-DD-HHMM-slug.html'
+        // POST FILES — Add new posts here.
+        // Filenames are hex-encoded Unix timestamps (precision: minute).
+        // Use: printf '%x\n' $(date -d "YYYY-MM-DD HH:MM:00 UTC" +%s)
+        // Files sort chronologically by hex value via localeCompare.
         // ============================================================
         const POST_FILES = [
-            '2026-05-02-1430-welcome.html',
-            '2026-05-02-1500-introduction.html',
-            '2026-05-03-1000-introduction-to-word-frequency.html',
-            '2026-05-10-1500-how-to-interpret-the-two-charts.html',
-            '2026-05-11-1500-what-the-charts-actually-mean.html'
+            '69f60a68.html',
+            '69f61170.html',
+            '69f71ca0.html',
+            '6a009d70.html',
+            '6a01eef0.html'
         ];
         // ============================================================
 
@@ -74,10 +76,6 @@
 
                     const h1 = doc.querySelector('h1');
                     const title = h1 ? h1.textContent.trim() : filename;
-
-                    const dateMatch = filename.match(/^(\d{4}-\d{2}-\d{2})-(\d{4})-/);
-                    const date = dateMatch ? dateMatch[1] : '';
-                    const time = dateMatch ? dateMatch[2].slice(0,2) + ':' + dateMatch[2].slice(2) : '';
 
                     posts.push({ filename: url, title });
                 } catch (e) {

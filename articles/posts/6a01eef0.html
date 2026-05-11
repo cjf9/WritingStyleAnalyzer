@@ -38,10 +38,10 @@
     <div class="container page-content">
         <h1>What the Charts Actually Mean</h1>
 
-        <p>In the <a href="2026-05-10-1500-how-to-interpret-the-two-charts.html">previous post</a>, we looked at how to <em>use</em> the two charts through comparison. Now let's open the black box. What does a single point on either curve actually represent? Here's the math, the algorithms, and how to read what you're seeing.</p>
+        <p>In the <a href="6a009d70.html">previous post</a>, we looked at how to <em>use</em> the two charts through comparison. Now let's open the black box. What does a single point on either curve actually represent? Here's the math, the algorithms, and how to read what you're seeing.</p>
 
         <h2>Chart 1: Sentence Length CDF</h2>
-        <img src="2026-05-11-1500-what-the-charts-actually-mean/1.png" alt="Sentence length CDF with a point highlighted" style="max-width:100%;border-radius:8px;margin:0.5rem 0;">
+        <img src="6a01eef0/1.png" alt="Sentence length CDF with a point highlighted" style="max-width:100%;border-radius:8px;margin:0.5rem 0;">
 
         <p>After splitting your text into sentences, we count how many words each sentence contains. Let <em>p</em>(<em>i</em>) be the proportion of sentences that have exactly <em>i</em> words. The cumulative distribution is:</p>
 
@@ -66,7 +66,7 @@
         <p>This is why the sentence counts you see are reliable even for text dense with abbreviations, dialogue, or academic citations.</p>
 
         <h2>Chart 2: Word Frequency CDF</h2>
-        <img src="2026-05-11-1500-what-the-charts-actually-mean/2.png" alt="Word frequency CDF with a point highlighted" style="max-width:100%;border-radius:8px;margin:0.5rem 0;">
+        <img src="6a01eef0/2.png" alt="Word frequency CDF with a point highlighted" style="max-width:100%;border-radius:8px;margin:0.5rem 0;">
 
         <p>Each word in your text is first <strong>lemmatized</strong> — reduced to its dictionary base form. Then each lemma is looked up in a reference frequency table (the COCA corpus, containing the 4,380 most common English words ranked from 1 = most frequent to 4,380 = least frequent). Words not found in the table are treated as even rarer.</p>
 
