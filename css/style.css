@@ -54,6 +54,7 @@ nav ul li a {
     color: #3498db;
     font-size: 0.9rem;
     font-weight: 700;
+    font-family: 'Baloo 2', cursive;
 }
 
 nav ul li a:hover {
