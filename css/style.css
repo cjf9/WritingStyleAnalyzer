@@ -1,5 +1,9 @@
 /* Writing Style Analyzer - Clean & Compact */
 
+a:hover {
+    text-decoration: underline;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -31,6 +35,12 @@ nav .logo {
     font-weight: 700;
     color: #3498db;
     font-family: 'Baloo 2', cursive;
+    text-decoration: none;
+}
+
+nav .logo:hover {
+    text-decoration: underline;
+    opacity: 0.8;
 }
 
 nav ul {
@@ -41,13 +51,13 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color: #555;
+    color: #3498db;
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 nav ul li a:hover {
-    color: #3498db;
+    text-decoration: underline;
 }
 
 /* Main Container */
@@ -67,10 +77,19 @@ nav ul li a:hover {
 
 .ad-copy {
     font-size: 0.9rem;
+    font-weight: 400;
     color: #666;
     max-width: 580px;
     margin: 0 auto;
     line-height: 1.6;
+}
+
+.ad-copy h1 {
+    display: inline;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    margin: 0;
 }
 
 /* Input Block */
@@ -284,6 +303,16 @@ footer p {
     font-size: 0.82rem;
 }
 
+footer a {
+    color: inherit;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
 /* Blog Page */
 .blog-list {
     margin: 2rem 0;
@@ -353,6 +382,16 @@ footer p {
 }
 .page-content ol li::before {
     content: "(" counter(item) ") ";
+}
+
+.page-content a {
+    color: inherit;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.page-content a:hover {
+    text-decoration: underline;
 }
 
 /* 404 Page */

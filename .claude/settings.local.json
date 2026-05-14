@@ -28,7 +28,21 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/)",
       "Bash(tasklist //FI 'PID eq __TRACKED_VAR__')",
       "Bash(taskkill //PID 34852 //F)",
-      "Bash(taskkill //PID 5016 //F)"
+      "Bash(taskkill //PID 5016 //F)",
+      "Bash(python3 -m http.server 3000)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/privacy.html)",
+      "Bash(npx --version)",
+      "Bash(npx serve:*)",
+      "Bash(curl:*)",
+      "Bash(where python3:*)",
+      "Bash(where python:*)",
+      "Bash(python -m http.server 3000)",
+      "Bash(python -m http.server 3456)",
+      "Bash(echo \"index:$\\(curl -s -o /dev/null -w '%{http_code}' http://localhost:3456/index.html\\)\")",
+      "Bash(echo \"about:$\\(curl -s -o /dev/null -w '%{http_code}' http://localhost:3456/about.html\\)\")",
+      "Bash(echo \"terms:$\\(curl -s -o /dev/null -w '%{http_code}' http://localhost:3456/terms.html\\)\")",
+      "Bash(echo \"privacy:$\\(curl -s -o /dev/null -w '%{http_code}' http://localhost:3456/privacy.html\\)\")",
+      "Bash(echo \"blog:$\\(curl -s -o /dev/null -w '%{http_code}' http://localhost:3456/articles/index.html\\)\")"
     ]
   }
 }
