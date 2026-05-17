@@ -60,28 +60,28 @@
 
         async function loadBlogPosts() {
             const blogList = document.getElementById('blogList');
-            const posts = [];
+            blogList.innerHTML = '<p style="color:#999;text-align:center;">Loading posts...</p>';
 
-            for (const filename of POST_FILES) {
-                try {
+            // Fetch all posts in parallel
+            const results = await Promise.allSettled(
+                POST_FILES.map(async (filename) => {
                     const url = 'posts/' + filename;
                     const res = await fetch(url);
-                    if (!res.ok) continue;
-
+                    if (!res.ok) throw new Error('not found');
                     const html = await res.text();
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(html, 'text/html');
-
                     const h1 = doc.querySelector('h1');
                     const title = h1 ? h1.textContent.trim() : filename;
+                    return { filename: url, title };
+                })
+            );
 
-                    posts.push({ filename: url, title });
-                } catch (e) {
-                    // Skip files that can't be fetched
-                }
-            }
+            const posts = results
+                .filter(r => r.status === 'fulfilled')
+                .map(r => r.value);
 
-            // Sort by filename descending (date embedded in name, newest first)
+            // Sort by filename (date embedded in hex name, newest first)
             posts.sort((a, b) => a.filename.localeCompare(b.filename));
 
             if (posts.length === 0) {
@@ -89,6 +89,7 @@
                 return;
             }
 
+            blogList.innerHTML = '';
             posts.forEach(post => {
                 const item = document.createElement('div');
                 item.className = 'blog-item';
