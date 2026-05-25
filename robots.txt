@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Crawl-delay: 5
 
-Sitemap: https://WritingStyleAnalyzer.com/sitemap.xml
+Disallow: /js/
+Disallow: /css/
+
+Sitemap: https://writingstyleanalyzer.com/sitemap.xml
