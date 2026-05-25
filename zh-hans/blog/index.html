@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Writing Style Analyzer</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>博客 - 写作风格分析器</title>
+    <link rel="stylesheet" href="../../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 
-    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../favicon-180.png">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-694HG8WN72"></script>
     <script>
@@ -23,16 +23,22 @@
 </head>
 <body>
     <nav>
-        <a href="../index.html" class="logo" title="Home">Writing Style Analyzer</a>
+        <a href="../index.html" class="logo" title="首页">写作风格分析器</a>
         <ul>
-            <li><a href="../about.html">About</a></li>
-            <li><a href="index.html">Blog</a></li>
+            <li><a href="../about.html">关于</a></li>
+            <li><a href="index.html">博客</a></li>
+            <li><a href="../help/index.html">帮助</a></li>
         </ul>
+        <div class="lang-switch">
+            <a href="/index.html">English</a>
+            <a href="/zh-hans/index.html" class="active">简体</a>
+            <a href="/zh-hant/index.html">繁體</a>
+        </div>
     </nav>
 
     <div class="container">
         <div class="intro" style="text-align:center;padding-bottom:1.5rem;">
-            <h1 class="ad-copy">How the analyzer works, and how to use it.</h1>
+            <h1 class="ad-copy">分析器的工作原理，以及如何使用它。</h1>
         </div>
 
         <div class="blog-list" id="blogList"></div>
@@ -43,26 +49,16 @@
     </footer>
 
     <script>
-        // ============================================================
-        // POST FILES — Add new posts here.
-        // Filenames are hex-encoded Unix timestamps (precision: minute).
-        // Use: printf '%x\n' $(date -d "YYYY-MM-DD HH:MM:00 UTC" +%s)
-        // Files sort chronologically by hex value via localeCompare.
-        // ============================================================
         const POST_FILES = [
             '69f60a68.html',
             '69f61170.html',
-            '69f71ca0.html',
-            '6a009d70.html',
-            '6a01eef0.html'
+            '69f71ca0.html'
         ];
-        // ============================================================
 
         async function loadBlogPosts() {
             const blogList = document.getElementById('blogList');
-            blogList.innerHTML = '<p style="color:#999;text-align:center;">Loading posts...</p>';
+            blogList.innerHTML = '<p style="color:#999;text-align:center;">正在加载文章...</p>';
 
-            // Fetch all posts in parallel
             const results = await Promise.allSettled(
                 POST_FILES.map(async (filename) => {
                     const url = 'posts/' + filename;
@@ -81,11 +77,10 @@
                 .filter(r => r.status === 'fulfilled')
                 .map(r => r.value);
 
-            // Sort by filename (date embedded in hex name, newest first)
             posts.sort((a, b) => a.filename.localeCompare(b.filename));
 
             if (posts.length === 0) {
-                blogList.innerHTML = '<p style="color:#999;text-align:center;">No posts yet.</p>';
+                blogList.innerHTML = '<p style="color:#999;text-align:center;">暂无文章。</p>';
                 return;
             }
 

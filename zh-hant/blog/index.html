@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>部落格 - 寫作風格分析器</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../favicon-180.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-694HG8WN72"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-694HG8WN72');
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="logo" title="首頁">寫作風格分析器</a>
+        <ul>
+            <li><a href="../about.html">關於</a></li>
+            <li><a href="index.html">部落格</a></li>
+            <li><a href="../help/index.html">幫助</a></li>
+        </ul>
+        <div class="lang-switch">
+            <a href="/index.html">English</a>
+            <a href="/zh-hans/index.html">简体</a>
+            <a href="/zh-hant/index.html" class="active">繁體</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="intro" style="text-align:center;padding-bottom:1.5rem;">
+            <h1 class="ad-copy">分析器的工作原理，以及如何使用它。</h1>
+        </div>
+
+        <div class="blog-list" id="blogList"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Writing Style Analyzer. All rights reserved. <a href="../privacy.html">Privacy</a> &middot; <a href="../terms.html">Terms</a></p>
+    </footer>
+
+    <script>
+        const POST_FILES = [
+            '69f60a68.html',
+            '69f61170.html',
+            '69f71ca0.html'
+        ];
+
+        async function loadBlogPosts() {
+            const blogList = document.getElementById('blogList');
+            blogList.innerHTML = '<p style="color:#999;text-align:center;">正在載入文章...</p>';
+
+            const results = await Promise.allSettled(
+                POST_FILES.map(async (filename) => {
+                    const url = 'posts/' + filename;
+                    const res = await fetch(url);
+                    if (!res.ok) throw new Error('not found');
+                    const html = await res.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const h1 = doc.querySelector('h1');
+                    const title = h1 ? h1.textContent.trim() : filename;
+                    return { filename: url, title };
+                })
+            );
+
+            const posts = results
+                .filter(r => r.status === 'fulfilled')
+                .map(r => r.value);
+
+            posts.sort((a, b) => a.filename.localeCompare(b.filename));
+
+            if (posts.length === 0) {
+                blogList.innerHTML = '<p style="color:#999;text-align:center;">暫無文章。</p>';
+                return;
+            }
+
+            blogList.innerHTML = '';
+            posts.forEach(post => {
+                const item = document.createElement('div');
+                item.className = 'blog-item';
+                item.innerHTML = `
+                    <a href="${post.filename}"><h3>${post.title}</h3></a>
+                `;
+                blogList.appendChild(item);
+            });
+        }
+
+        loadBlogPosts();
+    </script>
+</body>
+</html>

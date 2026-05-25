@@ -21,48 +21,113 @@
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://WritingStyleAnalyzer.com/articles/index.html</loc>
+    <loc>https://WritingStyleAnalyzer.com/blog/index.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://WritingStyleAnalyzer.com/articles/posts/69f60a68.html</loc>
+    <loc>https://WritingStyleAnalyzer.com/blog/posts/69f60a68.html</loc>
     <changefreq>never</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://WritingStyleAnalyzer.com/articles/posts/69f61170.html</loc>
+    <loc>https://WritingStyleAnalyzer.com/blog/posts/69f61170.html</loc>
     <changefreq>never</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://WritingStyleAnalyzer.com/articles/posts/69f71ca0.html</loc>
+    <loc>https://WritingStyleAnalyzer.com/blog/posts/69f71ca0.html</loc>
     <changefreq>never</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://WritingStyleAnalyzer.com/articles/posts/6a009d70.html</loc>
+    <loc>https://WritingStyleAnalyzer.com/help/index.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://WritingStyleAnalyzer.com/help/posts/6a009d70.html</loc>
     <changefreq>never</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://WritingStyleAnalyzer.com/articles/posts/6a01eef0.html</loc>
+    <loc>https://WritingStyleAnalyzer.com/help/posts/6a01eef0.html</loc>
     <changefreq>never</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://WritingStyleAnalyzer.com/articles/posts/2026-05-03-prunus.html</loc>
+    <loc>https://WritingStyleAnalyzer.com/blog/posts/2026-05-03-prunus.html</loc>
     <changefreq>never</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://WritingStyleAnalyzer.com/articles/posts/2026-05-03-cher.html</loc>
+    <loc>https://WritingStyleAnalyzer.com/blog/posts/2026-05-03-cher.html</loc>
     <changefreq>never</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://WritingStyleAnalyzer.com/articles/posts/2026-05-03-ap.html</loc>
+    <loc>https://WritingStyleAnalyzer.com/blog/posts/2026-05-03-ap.html</loc>
     <changefreq>never</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://WritingStyleAnalyzer.com/zh-hans/index.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://WritingStyleAnalyzer.com/zh-hans/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://WritingStyleAnalyzer.com/zh-hans/privacy.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://WritingStyleAnalyzer.com/zh-hans/terms.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://WritingStyleAnalyzer.com/zh-hans/blog/index.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://WritingStyleAnalyzer.com/zh-hans/help/index.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://WritingStyleAnalyzer.com/zh-hant/index.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://WritingStyleAnalyzer.com/zh-hant/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://WritingStyleAnalyzer.com/zh-hant/privacy.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://WritingStyleAnalyzer.com/zh-hant/terms.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://WritingStyleAnalyzer.com/zh-hant/blog/index.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://WritingStyleAnalyzer.com/zh-hant/help/index.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

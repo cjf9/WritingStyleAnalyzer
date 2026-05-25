@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Writing Style Analyzer</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>寫作風格分析器</title>
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <script src="js/plotly-2.27.0.min.js"></script>
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+    <script src="../js/plotly-2.27.0.min.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-694HG8WN72"></script>
     <script>
@@ -22,42 +22,42 @@
 </head>
 <body>
     <nav>
-        <a href="index.html" class="logo" title="Home">Writing Style Analyzer</a>
+        <a href="index.html" class="logo" title="首頁">寫作風格分析器</a>
         <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="blog/index.html">Blog</a></li>
-            <li><a href="help/index.html">Help</a></li>
+            <li><a href="about.html">關於</a></li>
+            <li><a href="blog/index.html">部落格</a></li>
+            <li><a href="help/index.html">幫助</a></li>
         </ul>
         <div class="lang-switch">
-            <a href="/index.html" class="active">English</a>
+            <a href="/index.html">English</a>
             <a href="/zh-hans/index.html">简体</a>
-            <a href="/zh-hant/index.html">繁體</a>
+            <a href="/zh-hant/index.html" class="active">繁體</a>
         </div>
     </nav>
 
     <div class="container">
         <div class="intro">
-            <div class="ad-copy"><h1>Unlock the secrets of your writing!</h1> Our powerful analysis tool helps you understand sentence length distribution and word frequency patterns in your text. Perfect for students, writers, and language enthusiasts who want to improve their writing skills.</div>
+            <div class="ad-copy"><h1>揭開你寫作的秘密！</h1> 我們強大的分析工具幫助你理解文本中的句子長度分佈和字頻規律。適合希望提升寫作能力的學生、作家和語言愛好者。</div>
         </div>
 
         <div class="input-block">
             <div class="textarea-wrap">
-                <textarea id="textInput" placeholder="Paste your text here"></textarea>
+                <textarea id="textInput" placeholder="在此貼上你的文本"></textarea>
             </div>
             <div class="submit-row">
-                <button id="submitTextBtn" class="btn btn-primary">Submit</button>
+                <button id="submitTextBtn" class="btn btn-primary">加入</button>
             </div>
             <div class="upload-hint-row">
-                <span class="upload-hint">You can also upload .txt files from your device:</span>
+                <span class="upload-hint">你也可以從裝置上傳 .txt 檔案：</span>
                 <input type="file" id="fileInput" accept=".txt" multiple style="display:none;">
-                <button id="uploadBtn" class="btn btn-secondary">Upload TXT</button>
+                <button id="uploadBtn" class="btn btn-secondary">上傳 TXT</button>
             </div>
         </div>
 
         <div id="submittedList" class="submitted-list"></div>
 
         <div class="analyze-row">
-            <button id="analyzeBtn" class="btn btn-primary">Analyze</button>
+            <button id="analyzeBtn" class="btn btn-primary">開始分析</button>
         </div>
 
         <div id="chartsSection" class="charts-section hidden">
@@ -69,29 +69,33 @@
             </div>
             <div class="share-section">
                 <div class="share-buttons">
-                    <button class="btn btn-secondary" id="downloadChartBtn" title="Download chart image">
+                    <button class="btn btn-secondary" id="downloadChartBtn" title="下載圖表圖片">
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-                        <span>Download Image</span>
+                        <span>下載圖片</span>
                     </button>
-                    <button class="social-btn icon-btn" data-platform="X" title="Share on X">
+                    <button class="social-btn icon-btn" data-platform="weibo" title="分享到微博">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#E6162D" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4" fill="#E6162D"/></svg>
+                        <span>微博</span>
+                    </button>
+                    <button class="social-btn icon-btn" data-platform="X" title="分享到 X">
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                         <span>X</span>
                     </button>
-                    <button class="social-btn icon-btn" data-platform="linkedin" title="Share on LinkedIn">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        <span>LinkedIn</span>
+                    <button class="social-btn icon-btn" data-platform="facebook" title="分享到 Facebook">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        <span>Facebook</span>
                     </button>
-                    <button class="social-btn icon-btn" data-platform="reddit" title="Share on Reddit">
+                    <button class="social-btn icon-btn" data-platform="reddit" title="分享到 Reddit">
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 01-2.498.056l-2.597-.547A8.303 8.303 0 0012 5.17a8.303 8.303 0 00-1.166.087L8.236 5.803a1.248 1.248 0 01-1.154-.46 1.249 1.249 0 01-.138-1.332c.3-.543.917-.6 1.438-.487l2.204.464a8.35 8.35 0 00-1.565 2.349c-2.243.31-3.876 1.865-4.295 4.075-.17.9-.17 1.85.11 2.71.386 1.185 1.357 2.012 2.486 2.26 1.308.289 2.646-.069 3.717-.752a7.03 7.03 0 003.44.001c1.07.682 2.41 1.04 3.716.752 1.13-.248 2.102-1.075 2.487-2.26.28-.86.28-1.81.11-2.71-.42-2.21-2.053-3.765-4.295-4.075a8.35 8.35 0 00-1.564-2.35l2.204-.464c.519-.112.984-.21 1.437.488zM9.003 13.828c.83 0 1.5.672 1.5 1.5 0 .83-.67 1.5-1.5 1.5-.828 0-1.5-.67-1.5-1.5 0-.828.672-1.5 1.5-1.5zm5.993 0c.83 0 1.5.672 1.5 1.5 0 .83-.67 1.5-1.5 1.5-.828 0-1.5-.67-1.5-1.5 0-.828.672-1.5 1.5-1.5z"/></svg>
                         <span>Reddit</span>
                     </button>
-                    <button class="social-btn icon-btn" data-platform="tumblr" title="Share on Tumblr">
+                    <button class="social-btn icon-btn" data-platform="linkedin" title="分享到 LinkedIn">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        <span>LinkedIn</span>
+                    </button>
+                    <button class="social-btn icon-btn" data-platform="tumblr" title="分享到 Tumblr">
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.073 9.897 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
                         <span>Tumblr</span>
-                    </button>
-                    <button class="social-btn icon-btn" data-platform="facebook" title="Share on Facebook">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        <span>Facebook</span>
                     </button>
                 </div>
             </div>
@@ -103,9 +107,18 @@
     </footer>
 
     <div id="shareToast" class="share-toast"></div>
-    <script src="js/sentence-splitter.js"></script>
-    <script src="js/lemmatizer.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/share.js"></script>
+    <script>
+      var SHARE_TEXT_OVERRIDE = '我剛描繪了我的寫作風格。你的呢？';
+      var SHARE_TITLE_OVERRIDE = '寫作風格分析器';
+      var SHARE_CARD_LINE1_OVERRIDE = '我的寫作風格，一圖看懂。';
+      var SHARE_CARD_LINE2_OVERRIDE = '你的呢？來免費測測！';
+      var SHARE_CARD_LINE2_INDENT_OVERRIDE = 0;
+      var OWL_IMG_PATH = '../favicon-180.png';
+    </script>
+    <script src="../js/zh/sentence-splitter.js"></script>
+    <script src="../js/zh/freq.js"></script>
+    <script src="../js/zh/s2t.js"></script>
+    <script src="../js/zh/main.js"></script>
+    <script src="../js/share.js"></script>
 </body>
 </html>

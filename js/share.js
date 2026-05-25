@@ -2,8 +2,11 @@
 // Generates chart images, composites a share card, and handles
 // per-platform sharing (Web Share API on mobile, download + URL on desktop).
 
-var SHARE_TEXT = 'I just mapped my writing style. What does yours look like?';
-var SHARE_TITLE = 'Writing Style Analyzer';
+var SHARE_TEXT = window.SHARE_TEXT_OVERRIDE || 'I just mapped my writing style. What does yours look like?';
+var SHARE_TITLE = window.SHARE_TITLE_OVERRIDE || 'Writing Style Analyzer';
+var SHARE_CARD_LINE1 = window.SHARE_CARD_LINE1_OVERRIDE || 'I just mapped my writing style.';
+var SHARE_CARD_LINE2 = window.SHARE_CARD_LINE2_OVERRIDE || 'What does yours look like?';
+var SHARE_CARD_LINE2_INDENT = window.SHARE_CARD_LINE2_INDENT_OVERRIDE;
 
 // ── Toast ──────────────────────────────────────────────────────────────
 function showToast(msg) {
@@ -97,9 +100,9 @@ function finishCard(ctx, W, H, y, owlImg) {
 
   // ── Share text (left side) ─────────────────────────────────────────
   ctx.font = '700 32px Inter, PingFang SC, Microsoft YaHei, Noto Sans SC, system-ui, sans-serif';
-  var line1 = 'I just mapped my writing style.';
-  var line2 = 'What does yours look like?';
-  var line2Indent = ctx.measureText('I just mapped ').width;  // under "m" of "my"
+  var line1 = SHARE_CARD_LINE1;
+  var line2 = SHARE_CARD_LINE2;
+  var line2Indent = SHARE_CARD_LINE2_INDENT !== undefined ? SHARE_CARD_LINE2_INDENT : ctx.measureText('I just mapped ').width;
   var lineHeight = 44;
   var textBlockH = 2 * lineHeight;
 
@@ -167,7 +170,7 @@ function generateShareImage() {
   return Promise.all([
     chartToImage('sentenceChart', 1200, 540),
     chartToImage('wordFreqChart', 1200, 540),
-    loadImage('favicon-180.png').catch(function () { return null; })
+    loadImage(window.OWL_IMG_PATH || 'favicon-180.png').catch(function () { return null; })
   ]).then(function (results) {
     return buildShareCard(results[0], results[1], results[2]);
   });
@@ -206,6 +209,14 @@ function getShareUrl(platform) {
       return 'https://www.reddit.com/submit?url=' + url + '&title=' + text;
     case 'tumblr':
       return 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' + url + '&caption=' + text;
+    case 'weibo':
+      return 'https://service.weibo.com/share/share.php?url=' + url + '&title=' + text;
+    case 'qzone':
+      return 'https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + url + '&title=' + text;
+    case 'xiaohongshu':
+      return 'https://www.xiaohongshu.com/explore';
+    case 'zhihu':
+      return 'https://www.zhihu.com/';
     default:
       return null;
   }
