@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>圖表實際上意味著什麼？</title>
+    <title>如何解讀兩張圖表？</title>
     <link rel="stylesheet" href="../../../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,10 +11,6 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../../../favicon-180.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
-        onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]});"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-694HG8WN72"></script>
     <script>
@@ -26,7 +22,7 @@
 </head>
 <body>
     <nav>
-        <a href="../../index.html" class="logo" title="首頁">寫作風格分析器</a>
+        <a href="../../index.html" class="logo" title="首頁"><img src="../../../favicon-32.png" alt="" class="logo-icon">寫作風格分析器</a>
         <ul>
             <li><a href="../../about.html">關於</a></li>
             <li><a href="../../blog/index.html">部落格</a></li>
@@ -40,59 +36,35 @@
     </nav>
 
     <div class="container page-content">
-        <h1>圖表實際上意味著什麼？</h1>
+        <h1>如何解讀兩張圖表？</h1>
 
-        <p>在<a href="6a009d70.html">上一篇</a>中，我們透過比較來探討如何<em>使用</em>這兩張圖表。現在讓我們打開黑盒子。曲線上任何一個點到底代表什麼？以下是數學原理、演算法以及如何讀懂你所看到的內容。</p>
+        <p>將你的文本透過寫作風格分析器執行後，你會看到兩張圖表。它們實際上告訴你什麼？簡短的回答是：它們透過<strong>比較</strong>變得有意義。以下是三個說明如何閱讀它們的對比案例。</p>
 
-        <h2>圖表 1：句子長度累積分佈函數</h2>
-        <img src="6a01eef0/1.png" alt="句子長度 CDF 帶高亮資料點" style="max-width:100%;border-radius:8px;margin:0.5rem 0;">
+        <h2>同一位作者，不同作品</h2>
+        <img src="6a009d70/1.png" alt="歐·亨利 — 多篇故事對比" style="max-width:100%;border-radius:8px;margin:0.5rem 0;">
 
-        <p>將你的文本分割成句子後，我們統計每個句子包含多少個詞。令 <em>p</em>(<em>i</em>) 為恰好有 <em>i</em> 個詞的句子所佔比例。累積分佈為：</p>
+        <p>上面的圖表疊加了<strong>歐·亨利</strong>的幾篇短篇小說。這些曲線緊密地聚集在一起——無論是句子長度還是詞頻。這不是巧合。當同一個人寫多個作品時，底層的統計模式往往會趨同。這表明這些圖表捕捉到了作者根深蒂固的寫作習慣中某些真實的東西——這些習慣作者本人可能從未如此清晰地視覺化過。</p>
 
-        <p style="text-align:center;font-size:1.2rem;margin:0.75rem 0;">
-            $$P(n) = \sum_{i=1}^{n} p(i)$$
-        </p>
+        <p>這是作者身份的證明嗎？不是。但它是一個引人注目的指紋。</p>
 
-        <p>用通俗的話說：<strong>P(n) 是包含 n 個或更少詞語的句子所佔的比例。</strong></p>
+        <h2>不同作者</h2>
+        <img src="6a009d70/2.png" alt="歐·亨利 vs 史蒂芬·金 vs 海明威" style="max-width:100%;border-radius:8px;margin:0.5rem 0;">
 
-        <p>以上圖中高亮的點為例。其坐標顯示為 <strong>(10, 0.62)</strong>，這意味著：<em>文本中 62% 的句子長度不超過 10 個詞。</em> 其餘 38% 更長。曲線在句子集中的地方上升最快——在低詞數處出現陡峭段表明偏好短句。</p>
+        <p>現在比較<strong>歐·亨利、史蒂芬·金和歐內斯特·海明威</strong>。曲線以富有啟發性的方式分叉。歐·亨利在三人中句子最短——他的句子長度曲線上升得最早。相比之下，海明威是高頻詞彙的最大使用者。他的詞頻曲線攀升得最快，反映出他致力於使用樸素、日常的語言——這也是他的文筆讓人感覺如此直接、易於為廣大讀者接受的主要原因。你在這些圖表中看到的是作家在構建句子和選擇詞彙方面真實的、可測量的差異。</p>
 
-        <p>這條線以階梯函數（水平-垂直）的形式繪製，因為句子長度是離散的：一個句子不能有 10.5 個詞。在整數值之間，比例保持不變，直到達到下一個句子長度。</p>
+        <h2>同一位作者，不同年代</h2>
+        <img src="6a009d70/3.png" alt="史蒂芬·金 — The Mangler (1972) vs Revival (2014)" style="max-width:100%;border-radius:8px;margin:0.5rem 0;">
 
-        <h2>句子如何分割</h2>
-        <p>一種樸素的方法是在每個句號處分割。但這會在 <em>Mr. Smith</em>、<em>U.S. policy</em> 或 <em>e.g. this example</em> 上出錯。我們的句子分割器使用兩階段策略：</p>
+        <p>這是史蒂芬·金相隔<strong>42 年</strong>的兩部小說：《絞肉機》（1972 年）和《重生》（2014 年）。曲線不再整齊地重疊。金的風格發生了變化——他的句子平均變長了，詞彙發生了變化。寫作習慣不是一成不變的；它們隨著年齡、經驗和品味的變化而漂移。</p>
 
-        <ol>
-            <li><strong>識別非邊界。</strong>常見縮寫（<em>Mr.</em>、<em>Mrs.</em>、<em>Dr.</em>、<em>Prof.</em>、<em>e.g.</em>、<em>i.e.</em>、<em>etc.</em>）、首字母縮寫（<em>J. K. Rowling</em>）和數字上下文（<em>3.14</em>、<em>$5.99</em>）被識別並用佔位符暫代，以免被誤認為句子結尾。</li>
-            <li><strong>在真正的邊界處分割。</strong>只有真正的句子結束標點——<code>.!?</code> 後跟空白和大寫字母——才觸發分割。然後佔位符被恢復為原始形式。</li>
-        </ol>
+        <p>這是否意味著他的技藝提高了？退步了？還是僅僅是風格發生了變化？我不知道。也許你已經有自己的想法了。</p>
 
-        <p>這就是為什麼即使對於縮寫、對話或學術引用密集的文本，你看到的句子計數也是可靠的。</p>
+        <h2>該比較什麼</h2>
+        <p>共同的主線是<strong>比較</strong>。比較你自己不同時期的寫作來看成長。將你自己與你欣賞的作家進行比較。比較不同的體裁、不同的心境、不同的草稿。圖表是中立的——它們只是視覺化資料。洞見來自我提出的問題。</p>
 
-        <h2>圖表 2：詞頻累積分佈函數</h2>
-        <img src="6a01eef0/2.png" alt="詞頻 CDF 帶高亮資料點" style="max-width:100%;border-radius:8px;margin:0.5rem 0;">
+        <p>現在就試試：貼上你自己兩段不同的寫作，看看曲線是否講述了一個故事。</p>
 
-        <p>你文本中的每個詞首先被<strong>詞形還原</strong>——還原為其詞典基礎形式。然後將每個詞元在參考頻率表（COCA 語料庫，包含 4,380 個最常見英語詞彙，從 1 = 最常見到 4,380 = 最不常見進行排名）中查找。表中未找到的詞被視為更加罕見。</p>
-
-        <p>同樣的累積邏輯適用，這次是按頻率排名累積。<strong>G(r) 是你的文本中位於前 r 個最常見英語詞彙中的詞所佔的比例。</strong></p>
-
-        <p>以高亮的點為例。其坐標顯示為 <strong>(890, 0.88)</strong>，這意味著：<em>你使用的 88% 的詞屬於英語中最常見的 890 個詞。</em> 其餘 12% 更罕見。一條早早上升並保持高位的曲線表明詞彙來自日常語言；一條滯後的曲線表明罕見詞的比例較高。</p>
-
-        <h2>詞彙如何被詞形還原</h2>
-        <p>如果 <em>run</em>、<em>runs</em> 和 <em>running</em> 被計為三個不同的詞，詞頻分析就會崩潰。詞形還原透過將每個屈折形式映射到單個基礎詞元來解決這個問題。我們的詞形還原器結合了兩種方法：</p>
-
-        <ol>
-            <li><strong>不規則映射。</strong>一個查找表處理高頻不規則詞：<em>went</em> &rarr; <em>go</em>、<em>better</em> &rarr; <em>good</em>、<em>mice</em> &rarr; <em>mouse</em> 以及數百個其他詞。縮略形式也會被解析：<em>don't</em> &rarr; <em>do</em>、<em>I'll</em> &rarr; <em>I</em>。</li>
-            <li><strong>後綴剝離。</strong>規則屈折變化在精心排序的管線中被移除：<em>-ing</em>、<em>-ed</em>、<em>-s</em>、<em>-es</em>、<em>-ies</em>、<em>-ly</em>、<em>-er</em>、<em>-est</em> 等。每一步剝離都會檢查一個<strong>NO_STRIP</strong> 保護清單——像 <em>interesting</em>（不是 "interest"）或 <em>visited</em>（不是 "visite"）這樣的詞——以防止過度詞形還原。</li>
-        </ol>
-
-        <p>靜默 <em>e</em> 恢復規則確保 <em>making</em> 變為 <em>make</em>（而不是 "mak"），<em>filed</em> 變為 <em>file</em>（而不是 "fil"）。整個操作在你的瀏覽器本地執行——沒有任何詞離開你的裝置。</p>
-
-        <h2>為什麼是階梯線？</h2>
-        <p>兩張圖表都使用階梯線渲染而非平滑曲線。這在數學上是正確的：句子長度和頻率排名都是離散的整數變數。平滑樣條曲線會暗示不可能存在的值（比如一個句子有 10.3 個詞，或者一個排名在 890.6 的詞）。階梯形狀不是風格選擇——它是資料實際呈現的樣子。</p>
-
-        <h2>為自己閱讀圖表</h2>
-        <p>下次你執行分析器時，將滑鼠懸停在任一曲線上的任意點。坐標會告訴你關於你寫作的一個精確統計事實。當你並排比較兩條曲線時，這些坐標對之間的差異<em>就是</em>風格差距。這就是全部的意義。</p>
+        <p>哦，還有一件事——我們在這裡完全專注於<em>比較</em>，而沒有解釋這些圖表本身實際上意味著什麼。我們會在下一篇部落格文章中深入討論。不過我想你們中的一些人已經搞明白了。</p>
     </div>
 
     <footer>

@@ -36,11 +36,22 @@ nav .logo {
     color: #3498db;
     font-family: 'Baloo 2', cursive;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
 }
 
 nav .logo:hover {
-    text-decoration: underline;
+    text-decoration: none;
     opacity: 0.8;
+}
+
+nav .logo-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    position: relative;
+    top: -3px;
 }
 
 nav ul {

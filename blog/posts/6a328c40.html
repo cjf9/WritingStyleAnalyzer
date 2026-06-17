@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A data comparison of all seven Harry Potter books. Sentence lengths shift dramatically after Book 1 — yet word frequency patterns prove they share a single author.">
+    <title>Harry Potter — All Seven Books, One Author?</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../favicon-180.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-694HG8WN72"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-694HG8WN72');
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="../../index.html" class="logo" title="Home"><img src="../../favicon-32.png" alt="" class="logo-icon">Writing Style Analyzer</a>
+        <ul>
+            <li><a href="../../about.html">About</a></li>
+            <li><a href="../index.html">Blog</a></li>
+            <li><a href="../../help/index.html">Help</a></li>
+        </ul>
+        <div class="lang-switch">
+            <a href="/index.html" class="active">English</a>
+            <a href="/zh-hans/index.html">简体</a>
+            <a href="/zh-hant/index.html">繁體</a>
+        </div>
+    </nav>
+
+    <div class="container page-content">
+        <h1>Harry Potter — All Seven Books, One Author?</h1>
+
+        <p>J.K. Rowling wrote seven Harry Potter novels, from <em>Philosopher's Stone</em> to <em>Deathly Hallows</em>, over the span of a decade. The stories grew darker, the books grew thicker, and the readers grew up alongside Harry's year at Hogwarts.</p>
+
+        <p>Here's a question that sounds absurd on its face: are all seven books by the same person? Of course they are — everyone knows Rowling wrote them. But strip away the author's name, the titles, and everything you know about the publishing history. Feed only the raw text into the analyzer and look at nothing but sentence structures and vocabulary distributions. Would the data alone tell you these books share an author?</p>
+
+        <p>We ran all seven. What we found was unexpected.</p>
+
+        <h2>Chart 1: After the First Book, Everything Shifts</h2>
+
+        <p>
+            <img src="6a328c40/1.png" alt="Harry Potter series sentence length CDF comparison" style="max-width:100%;height:auto;display:block;margin:1.5rem auto;border-radius:8px;">
+        </p>
+
+        <p>Look at the sentence length distributions. <strong>The curve for <em>Philosopher's Stone</em> looks nothing like the other six.</strong></p>
+
+        <p>In the first book, short sentences dominate. The curve hugs the left edge, rising fast. Sentences wrap up within a dozen words, over and over. The prose feels light, quick, buoyant — like a boy pushing open the door to a magical world for the first time. Everything is new. Nothing needs to be explained for long.</p>
+
+        <p>Starting with Book 2, the picture changes. The sentences lengthen. From <em>Chamber of Secrets</em> all the way through <em>Deathly Hallows</em>, the six later books <strong>cluster together in a strikingly consistent style</strong> — one that stands in clear contrast to the lightness of the first.</p>
+
+        <p>What caused such a dramatic shift after Book 1?</p>
+
+        <p>A reasonable guess: the first book was written as children's literature in the purest sense. Short sentences. Quick pace. No lingering. As the series progressed, Rowling knew millions of readers were waiting — readers who were themselves growing older. The books expanded. The sentences stretched. The narrative density increased. She wasn't coasting. She was writing for an audience that had grown up enough to handle more weight on the page.</p>
+
+        <h2>Chart 2: Same Hand, No Question</h2>
+
+        <p>
+            <img src="6a328c40/2.png" alt="Harry Potter series word frequency CDF comparison" style="max-width:100%;height:auto;display:block;margin:1.5rem auto;border-radius:8px;">
+        </p>
+
+        <p>If Chart 1 were all we had, you might squint and wonder whether someone else had stepped in for the later books. Chart 2 puts that thought to rest.</p>
+
+        <p>The seven word frequency curves are <strong>remarkably similar</strong>. Not "vaguely alike" — they look like a single curve that has been shifted up or down a few times. Beneath the surface variation, all seven books draw from the same underlying vocabulary distribution.</p>
+
+        <p>This means more than it first appears to.</p>
+
+        <p>It is relatively easy to imitate someone's sentence length. Want to write like Hemingway? Use short sentences. Want to write like Faulkner? Stretch them out. Sentence length is something a writer can consciously control. Decide that no sentence will exceed fifteen words, hold yourself to it for three pages, and you will produce a curve that resembles Hemingway's. It doesn't take great literary skill — just discipline.</p>
+
+        <p>But word frequency distribution is <strong>different</strong>.</p>
+
+        <p>You cannot consciously manage the exact frequency of every word across a long text. The human brain simply cannot track that much information. Over the course of a novel — tens of thousands of words, thousands of unique terms — which word appears how many times, at what rank, in what proportion to every other word: the dimensionality is too high, the data too vast. No writer sits at their desk calculating whether they've used "door" exactly 47 times to maintain a specific frequency profile. It's impossible.</p>
+
+        <p>In fact, it's impossible not just for humans — it's beyond what current AI can reliably do as well. An AI can mimic style. It cannot, across a full novel, reproduce the exact statistical fingerprint of another writer's vocabulary distribution. The constraints are too tight, the degrees of freedom too many.</p>
+
+        <p>This is what makes word frequency curves so powerful as <strong>authorship fingerprints</strong>. You can change your sentence lengths. You cannot change the deep structure of which words you reach for and how often. You can impersonate another writer for a paragraph, but not for a book.</p>
+
+        <p>Now look at Chart 2 more closely. The seven curves share another intriguing feature: <strong>each one has a characteristic jump at the same position.</strong></p>
+
+        <p>What does that tell us? It tells us that Rowling's attachment to certain images — certain specific words — remained constant across all seven books. Whatever the plot demanded, whatever new characters arrived and departed, she kept returning to the same small set of favored terms. They appear again and again, in the same frequency band, leaving the same statistical signature every time.</p>
+
+        <p>That leaves one question: if the curves are so similar, why don't they overlap perfectly? Why do they look like parallel shifts of each other — like a staircase of identical lines?</p>
+
+        <p>The mathematics behind this is fairly straightforward. Imagine a baseline word frequency curve. Now imagine writing a new book that introduces a prominent new element. Take <em>Half-Blood Prince</em>: the very concept of the "half-blood" identity means the word "half" appears far more often than in previous books. "Half" sits relatively high in the COCA frequency rankings. Boost its usage, and every word ranked below it gets nudged upward by a tiny amount in the cumulative distribution. The entire curve appears to shift upward as a unit.</p>
+
+        <p>In other words: <strong>the shifts aren't evidence of a changing style. They're evidence of new characters and new themes entering each book.</strong></p>
+
+        <p>This pattern fits serial fiction perfectly. The core cast stays the same. The core vocabulary stays the same. Each book adds a thematic layer — <em>Goblet of Fire</em> brings competition language, <em>Order of the Phoenix</em> brings resistance language, <em>Half-Blood Prince</em> brings identity language. The new material nudges the curve slightly, but the fundamental shape remains untouched.</p>
+
+        <p>Chart 2, then, tells us something deeper than Chart 1. The sentences can lengthen. The vocabulary can expand. But the hand holding the pen was the same from beginning to end.</p>
+
+        <p>The data says: you don't need the name on the cover. It's Rowling.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Writing Style Analyzer. All rights reserved. <a href="../../privacy.html">Privacy</a> &middot; <a href="../../terms.html">Terms</a></p>
+    </footer>
+</body>
+</html>

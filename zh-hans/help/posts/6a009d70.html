@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>如何解读两张图表？</title>
+    <title>图表实际上意味着什么？</title>
     <link rel="stylesheet" href="../../../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,6 +11,10 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../../../favicon-180.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]});"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-694HG8WN72"></script>
     <script>
@@ -22,7 +26,7 @@
 </head>
 <body>
     <nav>
-        <a href="../../index.html" class="logo" title="首页">写作风格分析器</a>
+        <a href="../../index.html" class="logo" title="首页"><img src="../../../favicon-32.png" alt="" class="logo-icon">写作风格分析器</a>
         <ul>
             <li><a href="../../about.html">关于</a></li>
             <li><a href="../../blog/index.html">博客</a></li>
@@ -36,35 +40,59 @@
     </nav>
 
     <div class="container page-content">
-        <h1>如何解读两张图表？</h1>
+        <h1>图表实际上意味着什么？</h1>
 
-        <p>将你的文本通过写作风格分析器运行后，你会看到两张图表。它们实际上告诉你什么？简短的回答是：它们通过<strong>比较</strong>变得有意义。以下是三个说明如何阅读它们的对比案例。</p>
+        <p>在<a href="6a009d70.html">上一篇</a>中，我们通过比较来探讨如何<em>使用</em>这两张图表。现在让我们打开黑匣子。曲线上任何一个点到底代表什么？以下是数学原理、算法以及如何读懂你所看到的内容。</p>
 
-        <h2>同一位作者，不同作品</h2>
-        <img src="6a009d70/1.png" alt="欧·亨利 — 多篇故事对比" style="max-width:100%;border-radius:8px;margin:0.5rem 0;">
+        <h2>图表 1：句子长度累积分布函数</h2>
+        <img src="6a01eef0/1.png" alt="句子长度 CDF 带高亮数据点" style="max-width:100%;border-radius:8px;margin:0.5rem 0;">
 
-        <p>上面的图表叠加了<strong>欧·亨利</strong>的几篇短篇小说。这些曲线紧密地聚集在一起——无论是句子长度还是词频。这不是巧合。当同一个人写多个作品时，底层的统计模式往往会趋同。这表明这些图表捕捉到了作者根深蒂固的写作习惯中某些真实的东西——这些习惯作者本人可能从未如此清晰地可视化过。</p>
+        <p>将你的文本分割成句子后，我们统计每个句子包含多少个词。令 <em>p</em>(<em>i</em>) 为恰好有 <em>i</em> 个词的句子所占比例。累积分布为：</p>
 
-        <p>这是作者身份的证明吗？不是。但它是一个引人注目的指纹。</p>
+        <p style="text-align:center;font-size:1.2rem;margin:0.75rem 0;">
+            $$P(n) = \sum_{i=1}^{n} p(i)$$
+        </p>
 
-        <h2>不同作者</h2>
-        <img src="6a009d70/2.png" alt="欧·亨利 vs 斯蒂芬·金 vs 海明威" style="max-width:100%;border-radius:8px;margin:0.5rem 0;">
+        <p>用通俗的话说：<strong>P(n) 是包含 n 个或更少词语的句子所占的比例。</strong></p>
 
-        <p>现在比较<strong>欧·亨利、斯蒂芬·金和欧内斯特·海明威</strong>。曲线以富有启发性的方式分叉。欧·亨利在三人中句子最短——他的句子长度曲线上升得最早。相比之下，海明威是高频词汇的最大用户。他的词频曲线攀升得最快，反映出他致力于使用朴素、日常的语言——这也是他的文笔让人感觉如此直接、易于为广大读者接受的主要原因。你在这些图表中看到的是作家在构建句子和选择词汇方面真实的、可测量的差异。</p>
+        <p>以上图中高亮的点为例。其坐标显示为 <strong>(10, 0.62)</strong>，这意味着：<em>文本中 62% 的句子长度不超过 10 个词。</em> 其余 38% 更长。曲线在句子集中的地方上升最快——在低词数处出现陡峭段表明偏好短句。</p>
 
-        <h2>同一位作者，不同年代</h2>
-        <img src="6a009d70/3.png" alt="斯蒂芬·金 — The Mangler (1972) vs Revival (2014)" style="max-width:100%;border-radius:8px;margin:0.5rem 0;">
+        <p>这条线以阶梯函数（水平-垂直）的形式绘制，因为句子长度是离散的：一个句子不能有 10.5 个词。在整数值之间，比例保持不变，直到达到下一个句子长度。</p>
 
-        <p>这是斯蒂芬·金相隔<strong>42 年</strong>的两部小说：《绞肉机》（1972 年）和《重生》（2014 年）。曲线不再整齐地重叠。金的风格发生了变化——他的句子平均变长了，词汇发生了变化。写作习惯不是一成不变的；它们随着年龄、经验和品味的变化而漂移。</p>
+        <h2>句子如何分割</h2>
+        <p>一种朴素的方法是在每个句号处分割。但这会在 <em>Mr. Smith</em>、<em>U.S. policy</em> 或 <em>e.g. this example</em> 上出错。我们的句子分割器使用两阶段策略：</p>
 
-        <p>这是否意味着他的技艺提高了？退步了？还是仅仅是风格发生了变化？我不知道。也许你已经有自己的想法了。</p>
+        <ol>
+            <li><strong>识别非边界。</strong>常见缩写（<em>Mr.</em>、<em>Mrs.</em>、<em>Dr.</em>、<em>Prof.</em>、<em>e.g.</em>、<em>i.e.</em>、<em>etc.</em>）、首字母缩写（<em>J. K. Rowling</em>）和数字上下文（<em>3.14</em>、<em>$5.99</em>）被识别并用占位符临时替换，以免被误认为句子结尾。</li>
+            <li><strong>在真正的边界处分割。</strong>只有真正的句子结束标点——<code>.!?</code> 后跟空白和大写字母——才触发分割。然后占位符被恢复为原始形式。</li>
+        </ol>
 
-        <h2>该比较什么</h2>
-        <p>共同的主线是<strong>比较</strong>。比较你自己不同时期的写作来看成长。将你自己与你欣赏的作家进行比较。比较不同的体裁、不同的心境、不同的草稿。图表是中立的——它们只是可视化数据。洞见来自你提出的问题。</p>
+        <p>这就是为什么即使对于缩写、对话或学术引用密集的文本，你看到的句子计数也是可靠的。</p>
 
-        <p>现在就试试：粘贴你自己两段不同的写作，看看曲线是否讲述了一个故事。</p>
+        <h2>图表 2：词频累积分布函数</h2>
+        <img src="6a01eef0/2.png" alt="词频 CDF 带高亮数据点" style="max-width:100%;border-radius:8px;margin:0.5rem 0;">
 
-        <p>哦，还有一件事——我们在这里完全专注于<em>比较</em>，而没有解释这些图表本身实际上意味着什么。我们会在下一篇博文中深入讨论。不过我想你们中的一些人已经搞明白了。</p>
+        <p>你文本中的每个词首先被<strong>词形还原</strong>——还原为其词典基础形式。然后将每个词元在参考频率表（COCA 语料库，包含 4,380 个最常见英语词汇，从 1 = 最常见到 4,380 = 最不常见进行排名）中查找。表中未找到的词被视为更加罕见。</p>
+
+        <p>同样的累积逻辑适用，这次是按频率排名累积。<strong>G(r) 是你的文本中位于前 r 个最常见英语词汇中的词所占的比例。</strong></p>
+
+        <p>以高亮的点为例。其坐标显示为 <strong>(890, 0.88)</strong>，这意味着：<em>你使用的 88% 的词属于英语中最常见的 890 个词。</em> 其余 12% 更罕见。一条早早上升并保持高位的曲线表明词汇来自日常语言；一条滞后的曲线表明罕见词的比例较高。</p>
+
+        <h2>词汇如何被词形还原</h2>
+        <p>如果 <em>run</em>、<em>runs</em> 和 <em>running</em> 被计为三个不同的词，词频分析就会崩溃。词形还原通过将每个屈折形式映射到单个基础词元来解决这个问题。我们的词形还原器结合了两种方法：</p>
+
+        <ol>
+            <li><strong>不规则映射。</strong>一个查找表处理高频不规则词：<em>went</em> &rarr; <em>go</em>、<em>better</em> &rarr; <em>good</em>、<em>mice</em> &rarr; <em>mouse</em> 以及数百个其他词。缩略形式也会被解析：<em>don't</em> &rarr; <em>do</em>、<em>I'll</em> &rarr; <em>I</em>。</li>
+            <li><strong>后缀剥离。</strong>规则屈折变化在精心排序的管道中被移除：<em>-ing</em>、<em>-ed</em>、<em>-s</em>、<em>-es</em>、<em>-ies</em>、<em>-ly</em>、<em>-er</em>、<em>-est</em> 等。每一步剥离都会检查一个<strong>NO_STRIP</strong> 保护列表——像 <em>interesting</em>（不是 "interest"）或 <em>visited</em>（不是 "visite"）这样的词——以防止过度词形还原。</li>
+        </ol>
+
+        <p>静默 <em>e</em> 恢复规则确保 <em>making</em> 变为 <em>make</em>（而不是 "mak"），<em>filed</em> 变为 <em>file</em>（而不是 "fil"）。整个操作在你的浏览器本地运行——没有任何词离开你的设备。</p>
+
+        <h2>为什么是阶梯线？</h2>
+        <p>两张图表都使用阶梯线渲染而非平滑曲线。这在数学上是正确的：句子长度和频率排名都是离散的整数变量。平滑样条曲线会暗示不可能存在的值（比如一个句子有 10.3 个词，或者一个排名在 890.6 的词）。阶梯形状不是风格选择——它是数据实际呈现的样子。</p>
+
+        <h2>为自己阅读图表</h2>
+        <p>下次你运行分析器时，将鼠标悬停在任一曲线上的任意点。坐标会告诉你关于你写作的一个精确统计事实。当你并排比较两条曲线时，这些坐标对之间的差异<em>就是</em>风格差距。这就是全部的意义。</p>
     </div>
 
     <footer>

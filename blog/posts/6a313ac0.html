@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Data-driven comparison of Ernest Hemingway and William Faulkner's writing styles. Sentence length and word frequency analysis reveals surprising truths about these two literary giants.">
+    <title>Hemingway vs Faulkner — What the Data Actually Says</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../favicon-180.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-694HG8WN72"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-694HG8WN72');
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="../../index.html" class="logo" title="Home"><img src="../../favicon-32.png" alt="" class="logo-icon">Writing Style Analyzer</a>
+        <ul>
+            <li><a href="../../about.html">About</a></li>
+            <li><a href="../index.html">Blog</a></li>
+            <li><a href="../../help/index.html">Help</a></li>
+        </ul>
+        <div class="lang-switch">
+            <a href="/index.html" class="active">English</a>
+            <a href="/zh-hans/index.html">简体</a>
+            <a href="/zh-hant/index.html">繁體</a>
+        </div>
+    </nav>
+
+    <div class="container page-content">
+        <h1>Hemingway vs Faulkner — What the Data Actually Says</h1>
+
+        <p>Ask anyone to name two writers who represent opposite extremes of English prose, and the answer is almost always the same: <strong>Ernest Hemingway and William Faulkner</strong>.</p>
+
+        <p>Hemingway: the master of lean. Short sentences. Plain words. The "iceberg theory" — strip everything down, let the unsaid carry the weight. His prose, in his own words, was shaped by the Kansas City Star style guide: "Use short sentences. Use short first paragraphs. Use vigorous English."</p>
+
+        <p>Faulkner: the maximalist. Sentences that spiral across half a page, clause nested inside clause, refusing to land until the thought has exhausted itself. In <em>Absalom, Absalom!</em>, a single sentence runs 1,288 words. Critics called him unreadable; he called it necessary. Stream of consciousness demands room to breathe.</p>
+
+        <p>Everyone <em>knows</em> these two are opposites. But what happens when you stop relying on literary reputation and actually <strong>measure</strong> the difference? We ran representative texts from both authors through the Writing Style Analyzer. The results are both exactly what you'd expect — and totally surprising.</p>
+
+        <h2>Chart 1: The Sentence Length Gulf</h2>
+
+        <p>
+            <img src="6a313ac0/1.png" alt="Sentence length CDF comparison: Hemingway vs Faulkner — Hemingway's sentences are dramatically shorter" style="max-width:100%;height:auto;display:block;margin:1.5rem auto;border-radius:8px;">
+        </p>
+
+        <p>This chart shows the cumulative distribution of sentence lengths. The X axis is sentence length (in words), and the Y axis tells you what fraction of all sentences fall at or below that length. A curve that rises fast and hugs the left edge means short sentences dominate. A curve that lags to the right means the writer likes to stretch out.</p>
+
+        <p>Hemingway's curve is the fast riser — and the gap between the two lines is <strong>staggering</strong>.</p>
+
+        <p>At the 17-word mark, Hemingway has already covered <strong>80% of his sentences</strong>. For Faulkner, that same threshold captures only a little over 60%. Think about that: four out of five Hemingway sentences wrap up before they hit 18 words. Faulkner needs nearly twice as much runway for the same coverage.</p>
+
+        <p>But the real jaw-dropper is at the right edge of the chart. Look at the 50-word mark. By this point, Hemingway is essentially done — nearly every sentence he writes is accounted for. Faulkner's curve, meanwhile, only reaches <strong>92%</strong> at 50 words. That means <strong>8% of Faulkner's sentences exceed 50 words</strong>.</p>
+
+        <p>And here's the crucial detail: our sentence splitter deliberately errs on the side of <em>fragmentation</em>. For the purpose of studying rhythm, we split on commas — not just periods, exclamation marks, and question marks. The units you see on this chart are not semantically complete sentences in the grammar-textbook sense. They are <strong>breath units</strong> — the chunks of text a reader processes between pauses.</p>
+
+        <p>So when the chart says 8% of Faulkner's "sentences" run past 50 words, what it's really saying is: <strong>roughly one out of every twelve times you pause for breath while reading Faulkner, you will have just processed more than fifty words without a break.</strong> If you're reading aloud, that's a serious lung workout. Hemingway, by contrast, gives you a breath almost every time.</p>
+
+        <p>This isn't just a stylistic quirk. It's a fundamentally different theory of what reading should feel like. Hemingway wants you to move fast, to feel the silences between the words. Faulkner wants you submerged, disoriented, swept along by the current of consciousness until you forget where you started. The data doesn't lie: both men got exactly what they wanted.</p>
+
+        <h2>Chart 2: The Vocabulary Surprise</h2>
+
+        <p>
+            <img src="6a313ac0/2.png" alt="Word frequency CDF comparison: Hemingway vs Faulkner — remarkably similar vocabulary patterns" style="max-width:100%;height:auto;display:block;margin:1.5rem auto;border-radius:8px;">
+        </p>
+
+        <p>Given how different those sentence length curves look, you'd expect their word frequency profiles to be equally divergent, right? One writer uses plain words, the other is famously dense — surely their vocabulary curves should be worlds apart.</p>
+
+        <p><strong>They're not. They're nearly identical.</strong></p>
+
+        <p>This chart plots cumulative word frequency — the fraction of all words in the text that fall within the N most common English words (ranked against the COCA corpus of 4,380 words). A curve that hugs the left edge means the writer leans heavily on common vocabulary. A curve that lags means the writer reaches for rarer words more often.</p>
+
+        <p>In the first 300 most common words, Hemingway uses those high-frequency words slightly more — his curve rises a touch faster. This is the Hemingway we know: "Use vigorous English." Common, strong, concrete words.</p>
+
+        <p>But after that initial 300-word band? <strong>The two curves practically overlap.</strong> Through the middle ranks, through the rarer vocabulary, all the way out to the long tail — Hemingway and Faulkner draw from the same well. Their lexical range, their appetite for uncommon words, the balance they strike between the familiar and the esoteric — it's all eerily similar.</p>
+
+        <p>This is genuinely surprising. These are two writers famous for being opposites. One is taught in every "write clearly" workshop; the other is the poster child for difficult prose. And yet, at the vocabulary level, they are operating from nearly identical decks of cards. The difference isn't <em>which</em> words they use — it's <em>how they arrange them</em>.</p>
+
+        <p>It also suggests something deeper. Word frequency curves tend to reflect a writer's cultural context: their education level, the subjects they discuss, the intellectual milieu they inhabit. Two writers with near-identical vocabulary profiles probably share a similar world. They read similar books. They wrestle with similar ideas. They belong to the same era.</p>
+
+        <p>So we looked it up.</p>
+
+        <table style="margin:1.5rem auto;border-collapse:collapse;text-align:center;">
+            <thead>
+                <tr style="border-bottom:2px solid #333;">
+                    <th style="padding:0.5rem 1.5rem;"></th>
+                    <th style="padding:0.5rem 1.5rem;">Born</th>
+                    <th style="padding:0.5rem 1.5rem;">Died</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom:1px solid #ddd;">
+                    <td style="padding:0.5rem 1.5rem;font-weight:600;">William Faulkner</td>
+                    <td style="padding:0.5rem 1.5rem;">September 25, 1897</td>
+                    <td style="padding:0.5rem 1.5rem;">July 6, 1962</td>
+                </tr>
+                <tr>
+                    <td style="padding:0.5rem 1.5rem;font-weight:600;">Ernest Hemingway</td>
+                    <td style="padding:0.5rem 1.5rem;">July 21, 1899</td>
+                    <td style="padding:0.5rem 1.5rem;">July 2, 1961</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Their birth dates are less than two years apart. Their death dates are separated by four days.</strong></p>
+
+        <p>Faulkner was born in 1897, Hemingway in 1899. Faulkner died on July 6, 1962; Hemingway, exactly one year and four days earlier, on July 2, 1961. They lived through the same wars, navigated the same literary marketplace, drank in the same Paris, and were awarded Nobel Prizes in Literature five years apart (Hemingway in 1954, Faulkner in 1949 — though Faulkner's was announced in 1950).</p>
+
+        <p>The algorithm had no idea about any of this. It doesn't know who Hemingway and Faulkner are. It doesn't know their birthdates, their reputations, or their Nobel citations. All it saw were two arrays of sentence lengths and two frequency tables. And from those numbers alone, it concluded: <em>these two people probably come from the same world.</em></p>
+
+        <p>It was right.</p>
+
+        <h2>What This Tells Us About Writing</h2>
+
+        <p>The Hemingway–Faulkner comparison teaches us something important about what "style" actually is.</p>
+
+        <p>We tend to conflate style with vocabulary. If someone writes with unusual words, we say they have a "dense style." If they use plain language, we call it "simple." But the data suggests this is wrong — or at least incomplete. Hemingway and Faulkner used essentially the same vocabulary. What made them different was <strong>rhythm</strong>: how long their sentences ran, how they distributed pauses, how they managed the reader's breath.</p>
+
+        <p>Style, in other words, is more architecture than decoration. It's not the paint color; it's the floor plan.</p>
+
+        <p>This is exactly the kind of insight the Writing Style Analyzer is built to surface. When you look at your own sentence length and word frequency charts, you're not just seeing abstract numbers — you're seeing a fingerprint of your writing rhythm. And if you compare your chart to a writer you admire, you can measure the gap. Not in vague, impressionistic terms ("their writing flows better"), but in precise, quantifiable ones ("at the 20-word mark, they've covered 85% of their sentences; I've only covered 60%").
+
+        <p>The tool won't tell you which rhythm is "correct," because there is no correct rhythm. Hemingway and Faulkner proved that you can write from opposite ends of the sentence-length spectrum and both win the Nobel Prize. But the tool <em>will</em> tell you what you're actually doing — and whether it matches what you intended.</p>
+
+        <p>Maybe you want to write like Hemingway. Maybe you want to write like Faulkner. Maybe, like most of us, you want to be somewhere in between, with the range to dial the knob either way depending on the occasion. In any case, the first step is the same: <strong>know your numbers</strong>.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Writing Style Analyzer. All rights reserved. <a href="../../privacy.html">Privacy</a> &middot; <a href="../../terms.html">Terms</a></p>
+    </footer>
+</body>
+</html>

@@ -10,6 +10,13 @@
 
   <!-- English - Blog -->
   <url><loc>https://writingstyleanalyzer.com/blog/index.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/blog/posts/6a313ac0.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/blog/posts/6a313bec.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/blog/posts/6a315de8.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/blog/posts/6a3245f0.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/blog/posts/6a325400.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/blog/posts/6a327020.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/blog/posts/6a328c40.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
   <url><loc>https://writingstyleanalyzer.com/blog/posts/69f60a68.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
   <url><loc>https://writingstyleanalyzer.com/blog/posts/69f61170.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
   <url><loc>https://writingstyleanalyzer.com/blog/posts/69f71ca0.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
@@ -27,9 +34,19 @@
 
   <!-- 简体中文 - Blog -->
   <url><loc>https://writingstyleanalyzer.com/zh-hans/blog/index.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/zh-hans/blog/posts/6a313ac0.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/zh-hans/blog/posts/6a313bec.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/zh-hans/blog/posts/6a315de8.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/zh-hans/blog/posts/6a3245f0.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/zh-hans/blog/posts/6a325400.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/zh-hans/blog/posts/6a327020.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/zh-hans/blog/posts/6a328c40.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
   <url><loc>https://writingstyleanalyzer.com/zh-hans/blog/posts/69f60a68.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
   <url><loc>https://writingstyleanalyzer.com/zh-hans/blog/posts/69f61170.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
   <url><loc>https://writingstyleanalyzer.com/zh-hans/blog/posts/69f71ca0.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/zh-hans/blog/posts/6a22ba40.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/zh-hans/blog/posts/6a23d33f.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/zh-hans/blog/posts/6a23fdb0.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
 
   <!-- 简体中文 - Help -->
   <url><loc>https://writingstyleanalyzer.com/zh-hans/help/index.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -44,9 +61,19 @@
 
   <!-- 繁體中文 - Blog -->
   <url><loc>https://writingstyleanalyzer.com/zh-hant/blog/index.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/zh-hant/blog/posts/6a313ac0.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/zh-hant/blog/posts/6a313bec.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/zh-hant/blog/posts/6a315de8.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/zh-hant/blog/posts/6a3245f0.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/zh-hant/blog/posts/6a325400.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/zh-hant/blog/posts/6a327020.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/zh-hant/blog/posts/6a328c40.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
   <url><loc>https://writingstyleanalyzer.com/zh-hant/blog/posts/69f60a68.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
   <url><loc>https://writingstyleanalyzer.com/zh-hant/blog/posts/69f61170.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
   <url><loc>https://writingstyleanalyzer.com/zh-hant/blog/posts/69f71ca0.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/zh-hant/blog/posts/6a22ba40.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/zh-hant/blog/posts/6a23d33f.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://writingstyleanalyzer.com/zh-hant/blog/posts/6a23fdb0.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
 
   <!-- 繁體中文 - Help -->
   <url><loc>https://writingstyleanalyzer.com/zh-hant/help/index.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>

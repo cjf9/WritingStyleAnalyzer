@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="史蒂芬·金、福克納和Google Gemini寫日常生活——一次數據對比，引出的問題比答案更多。">
+    <title>史蒂芬·金、福克納和 Gemini 的文章對比</title>
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../favicon-180.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-694HG8WN72"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-694HG8WN72');
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="../../index.html" class="logo" title="首頁"><img src="../../../favicon-32.png" alt="" class="logo-icon">寫作風格分析器</a>
+        <ul>
+            <li><a href="../../about.html">關於</a></li>
+            <li><a href="../index.html">部落格</a></li>
+            <li><a href="../../help/index.html">幫助</a></li>
+        </ul>
+        <div class="lang-switch">
+            <a href="/index.html">English</a>
+            <a href="/zh-hans/index.html">简体</a>
+            <a href="/zh-hant/index.html" class="active">繁體</a>
+        </div>
+    </nav>
+
+    <div class="container page-content">
+        <h1>史蒂芬·金、福克納和 Gemini 的文章對比</h1>
+
+        <p>這個系列寫到現在，比的一直是人和人——海明威對福克納，中國學生對海明威。這些對比雖然各有驚喜，但有個共同點：圖上的每個作者都有心跳，有過童年，有各自寫字的理由。</p>
+
+        <p>今天加進來一個不一樣的。這位從來沒感受過心跳是什麼東西。</p>
+
+        <p>我們拿了三篇文本——<strong>史蒂芬·金</strong>一篇、<strong>威廉·福克納</strong>一篇、<strong>Google Gemini</strong>一篇——一起丟進分析器。給 Gemini 的 prompt 很簡單：「寫寫你的日常生活，假裝你是一個正在描述自己一天的人類。」金和福克納的語料是小說片段——也是寫人在過日子，處理各種日常和不日常的事。</p>
+
+        <p>所以按道理，三篇寫的差不多是同一個東西：人的經驗。按道理。</p>
+
+        <p>圖表講了一個不太一樣的故事。或者說，講了一個我自己也還沒完全想明白的故事。</p>
+
+        <h2>圖一：Gemini 不會喘氣</h2>
+
+        <p>
+            <img src="6a315de8/1.png" alt="句子長度累積分佈對比：史蒂芬·金 vs 福克納 vs Google Gemini——Gemini 幾乎不寫10詞以內的句子" style="max-width:100%;height:auto;display:block;margin:1.5rem auto;border-radius:8px;">
+        </p>
+
+        <p>三條曲線，三種對「句子應該長什麼樣」的完全不同理解。</p>
+
+        <p>先說金。他的線貼著左邊走——短句多，變化多，節奏平滑地往上升。這很金：一個講故事的人，用人們說話的方式寫作，知道什麼時候該短促一擊，什麼時候該拉開架勢。這種曲線，是一個花了幾十年琢磨怎麼讓讀者翻頁的人寫出來的。</p>
+
+        <p>福克納我們<a href="6a313ac0.html">之前詳細講過</a>，長話短說：他的線賴在右邊，句子長，而且在極長句那個區間，他走到了誰都沒去過的地方。福克納寫東西，標點符號像是建議，不是規則。圖上一目了然。</p>
+
+        <p>好，現在看 Gemini。</p>
+
+        <p><strong>Gemini 幾乎從來不寫 10 個詞以內的句子。</strong>你看它曲線開頭那一段，幾乎不動。想想這意味著什麼：一篇講「我的一天」的文章，人寫的話，大概率會蹦出「我醒了。煮了咖啡。看了眼手機。」這種句子。這是人話。人就是這麼想事情、這麼說話的。Gemini 面對同樣的題目，顯然覺得一個四個詞的句子太掉價了，根本不配出現。</p>
+
+        <p>實際上，Gemini 的曲線在圖表的大部分區間裡都<strong>趴在福克納右邊</strong>。AI 寫的句子，平均比美國文學史上最著名的長句狂魔還要長。這件事本身就挺離譜的。這臺機器，啃了整個網路之後，似乎得出一個結論：正經文章就得寫長句。</p>
+
+        <p>但真正有意思的在後面——也是 AI 和福克納分道揚鑣的地方。看 Gemini 曲線後半段的<strong>坡度</strong>。它一旦開始往上走，就衝得飛快，迅速竄到 100%。沒有那種懶洋洋拖出去老遠的長尾巴。</p>
+
+        <p>福克納有那條尾巴。福克納一直在往前走。他寫 60 個詞的句子，不是因為任務要求，是因為那個想法本身需要——有些念頭，在他看來，短句子裝不下。他的長句是一種選擇，一種美學立場，一種明知有些讀者會跑還偏要賭一把的決定。</p>
+
+        <p>Gemini 的長句是另一回事。長，不是因為想法複雜，是因為模型學到了一個規律：「好文章 = 完整、規範、語法飽滿的句子」。末尾那段陡峭上升，暴露了一切：<strong>這是一個在優化「完成任務」的系統，不是在優化節奏。</strong>它寫長句不是因為想寫，是因為不知道怎麼寫短句。曲線衝到 100% 就停了，因為字數夠了，活兒幹完了，沒有任何藝術上的理由讓它再逗留一會兒。</p>
+
+        <p>我覺得這是我們目前看到的、AI 文風和人之間最清晰的信號之一——不是好壞的問題，而是句子長度<em>底層分佈</em>就不一樣。人的曲線被呼吸塑造，被偏好塑造，被一輩子的閱讀史塑造。AI 的曲線被優化目標塑造。兩條線可以靠得很近，但不是一種東西。</p>
+
+        <h2>圖二：Gemini 懂的詞太多了</h2>
+
+        <p>
+            <img src="6a315de8/2.png" alt="詞頻累積分佈對比：金 vs 福克納 vs Gemini——Gemini 的詞彙多樣性驚人" style="max-width:100%;height:auto;display:block;margin:1.5rem auto;border-radius:8px;">
+        </p>
+
+        <p>圖一講節奏，圖二講的是<strong>你在聊什麼</strong>——而這張圖真的把我難住了。</p>
+
+        <p>先回顧一下我們的詞頻分析是怎麼做的：每個詞先還原成詞根（lemma），比如 run、runs、running 算作同一個詞族，然後去 COCA 詞頻表裡查排名。這意味著圖表測量的是<strong>概念多樣性</strong>，不是表面的用詞花樣。兩篇話題相似的文章，理論上應該給出相似的曲線。</p>
+
+        <p>Gemini 的 prompt 是「描述你的一天」。金和福克納的語料是小說——故事裡角色也在過日子。三篇文本，說到底，寫的都是<strong>人的日常經驗</strong>。</p>
+
+        <p>那為什麼 Gemini 的曲線長得像從外星來的？</p>
+
+        <p><strong>Gemini 的用詞多樣性高得離譜。</strong>整條曲線一路趴在金和福克納右邊。常用詞用得比人少，生僻詞用得比人多，覆蓋的頻率範圍大得驚人。按詞族來算，Gemini 觸及到的不同概念，遠遠超過了兩位人類作家。</p>
+
+        <p>這就很奇怪了。金和福克納寫的是小說——有工作的人、有家庭的人、有煩惱的人，吃飯，聊天，吵架，發呆。小說在某種意義上就是對日常生活的模擬。如果三篇文本都「關於」人的經驗，它們的詞彙曲線至少應該有點家族相似吧？結果 Gemini 的曲線像是另一個物種。</p>
+
+        <p>怎麼回事？我有幾個猜想，但沒有答案：</p>
+
+        <ol>
+            <li><strong>也許 Gemini 就是單純「知道」更多東西。</strong>人類作家靠自己的經驗寫作——那些他們真的遇到過的物品、地方、觀念。Gemini 靠整個網路寫作。當被問到「你的一天」，它可能會提到早餐、通勤、工作、愛好、運動、社群媒體、讀書、做飯……十幾個領域一口氣全列出來，每個領域都帶一套自己的詞。人類寫自己的一天，大概兩三個領域就收住了。Gemini 沒有真正的一天可寫，只好從它能想到的所有領域裡各抓一把。</li>
+            <li><strong>也許小說比我們以為的要窄。</strong>金和福克納確實在寫「日常」，但小說是經過篩選的。作者只挑對故事有用的東西寫。不會把房間裡每樣東西都列一遍——那盞檯燈，只有在推動情節的時候才會被提到。Gemini 呢？它可能在做一件更接近「清單」的事——把「一天裡會發生的事」盡可能全面地羅列出來，詞彙來源自然比一個敘事要雜得多。</li>
+            <li><strong>也許 prompt 本身就問歪了。</strong>「假裝你是人類，描述你的日常生活」——這個任務本身就不自然。沒有人會在沒有讀者、沒有敘事目的的情況下平白無故寫一篇「我的日常」。AI 被丟進這個虛假場景，可能下意識就開了百科模式：什麼都別落下，全面覆蓋，拿出一篇技術上切題但結構上完全不是人類寫法的東西來。</li>
+        </ol>
+
+        <p>不過，關鍵在這裡：<strong>我不打算去讀這些文章來尋找答案。</strong></p>
+
+        <p>我能讀。我可以把 Gemini 的輸出打開，仔仔細細地看一遍，然後一行一行跟金和福克納做對比。我甚至可以再找一個 AI 來幫我分析這三篇，告訴我差異在哪。那是最容易的路。但我覺得那是錯的。</p>
+
+        <p>我真正感興趣的是：你能不能<strong>一個字都不看</strong>，就回答這個問題？能不能設計一種演算法，用純機械的方式去測量「話題多樣性」或者「語義廣度」——不去理解意思，只分析詞彙分佈的統計結構本身？能不能僅憑曲線的形狀，就判斷出一篇文本是在講述一個連貫的場景，還是在從十幾個不相關的領域裡各採一點？</p>
+
+        <p>這不是一個藝術問題，這是一個科學問題。它關心的是：一篇文本的統計足跡裡，是不是蘊含著足夠的資訊，能暴露出它是怎麼被構建出來的——由一顆沿著敘事線走的大腦，還是由一個以覆蓋率為優化目標的模型。</p>
+
+        <p>我腦子裡大概有個演算法雛形。思路是用某種類似<strong>「領域轉換熵」</strong>的指標——測量一篇文本在多詞之間跳轉於語義相遠的詞簇的頻率，跟一個連貫敘事應有的頻率做對比。但這個留到以後再寫吧，說實話，也留到另一批實驗之後。</p>
+
+        <p>如果你對這類東西感興趣——數據分析跟文學問題的交界，一種你不用讀文字就能知道點什麼的可能——可以留意後續的更新。還沒完。</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Writing Style Analyzer. All rights reserved. <a href="../../privacy.html">Privacy</a> &middot; <a href="../../terms.html">Terms</a></p>
+    </footer>
+</body>
+</html>

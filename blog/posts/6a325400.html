@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bob Dylan and Taylor Swift, two generations of songwriters, compared through data. Sentence length and word frequency reveal how a Nobel laureate and a pop icon build their lyrics differently.">
+    <title>Bob Dylan vs Taylor Swift — Two Generations of Songwriting, in Data</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../favicon-180.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-694HG8WN72"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-694HG8WN72');
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="../../index.html" class="logo" title="Home"><img src="../../favicon-32.png" alt="" class="logo-icon">Writing Style Analyzer</a>
+        <ul>
+            <li><a href="../../about.html">About</a></li>
+            <li><a href="../index.html">Blog</a></li>
+            <li><a href="../../help/index.html">Help</a></li>
+        </ul>
+        <div class="lang-switch">
+            <a href="/index.html" class="active">English</a>
+            <a href="/zh-hans/index.html">简体</a>
+            <a href="/zh-hant/index.html">繁體</a>
+        </div>
+    </nav>
+
+    <div class="container page-content">
+        <h1>Bob Dylan vs Taylor Swift — Two Generations of Songwriting, in Data</h1>
+
+        <p>Bob Dylan won the Nobel Prize in Literature in 2016. The announcement split the world in two: those who thought it was long overdue, and those who thought song lyrics didn't belong in the same category as novels and poems. Either way, the Swedish Academy had made its point: the words to "Blowin' in the Wind" and "Like a Rolling Stone" were, in their view, literature.</p>
+
+        <p>Taylor Swift has not won a Nobel Prize. She has, however, won fourteen Grammys, sold over 200 million records, and built a career out of lyrics so personal that fans treat them as archaeological artifacts — decoding every pronoun, every metaphor, every capitalized word. If Dylan is the songwriter as prophet, Swift is the songwriter as diarist. One speaks in parables, the other in diary entries.</p>
+
+        <p>We gathered a set of lyrics from each — Dylan songs like "'Cross the Green Mountain," "'Til I Fell in Love with You," and "Handy Dandy"; Swift songs like "Love Story," "Blank Space," "Shake It Off," and "Anti-Hero" — and ran them through the Writing Style Analyzer. What the charts reveal is a story about brevity, vocabulary, and one very strange spike in the data.</p>
+
+        <h2>Chart 1: Taylor Keeps It Short</h2>
+
+        <p>
+            <img src="6a325400/1.png" alt="Sentence length CDF comparison: Bob Dylan vs Taylor Swift lyrics" style="max-width:100%;height:auto;display:block;margin:1.5rem auto;border-radius:8px;">
+        </p>
+
+        <p>Taylor Swift's sentences are, on average, <strong>shorter than Bob Dylan's</strong>. Her curve rises faster, hugging the left edge — more of her lines wrap up in fewer words.</p>
+
+        <p>This is not a criticism. Pop songwriting is not about stretching out; it's about compression. A great pop lyric delivers one clean emotional punch in the fewest words possible. "It's a love story, baby, just say yes." "We are never ever, ever getting back together." "I shake it off, I shake it off." These lines work precisely because they are short — they fit in your mouth, they fit in your memory, they fit in an Instagram caption. The short sentence is the unit of pop.</p>
+
+        <p>Dylan's lines breathe longer. He's not writing for the chorus-drop; he's writing for the verse that unspools across a harmonica solo. "I crossed the green mountain, I slept by the stream / Heaven blazin' in my head, I dreamt a monstrous dream." That sentence stretches, leans back, invites the listener to follow it somewhere unknown. Dylan's longer sentences are not accidental — they are a structural commitment to narrative density. He has more to say per line, and he's willing to make you wait for the payoff.</p>
+
+        <p>This is not to say Swift doesn't write long lines — she does. "I'm standing there on a balcony in summer air" is longer than many Dylan lines. But the distribution tilts shorter, and the overall curve reflects a different instinct: <strong>get to the point, make it hit, move on.</strong></p>
+
+        <h2>Chart 2: Bob's Vocabulary Is the Richer One — and Taylor Has a Secret</h2>
+
+        <p>
+            <img src="6a325400/2.png" alt="Word frequency CDF comparison: Bob Dylan vs Taylor Swift lyrics" style="max-width:100%;height:auto;display:block;margin:1.5rem auto;border-radius:8px;">
+        </p>
+
+        <p>This is where things get interesting. Let's start with the big picture: <strong>Bob Dylan's vocabulary is richer.</strong> His curve runs to the right of Swift's through most of the chart — he uses common words less heavily and draws from a wider range of less common ones. This aligns with what you'd expect from a songwriter who built a career on surrealist imagery, Biblical allusion, and vocabulary that ranges from "juggernaut" to "flesh-colored chrism." Dylan has always reached for the unexpected word. The data confirms it.</p>
+
+        <p>Swift's vocabulary, while not as broad, is still substantial. She's writing about love, heartbreak, reputation, and self-loathing — four topics that, to be fair, have a lot of overlap. But within that space, she works with precision. The curve is smoother through the common-word zone, reflecting a writer who knows exactly which everyday words carry the most weight.</p>
+
+        <p>Now, look more closely at Swift's curve. Do you see it? Somewhere in the range of <strong>word frequency ranks 1094 to 1101</strong> — that is, in the zone between the 1,094th and 1,101st most common English words — her curve makes a <strong>sudden, sharp jump upward</strong>. This is not a gradual rise. It's a lurch. A spike.</p>
+
+        <p>What does a spike like that mean? It means there is <strong>one specific word</strong> — or perhaps one small family of closely related words — that Taylor Swift uses with unusual intensity. So intensely, in fact, that it visibly distorts the cumulative distribution. Most of the curve rises smoothly, each frequency bin contributing its modest share. But at this particular rank, something happens: a single word arrives and carries a disproportionate chunk of the distribution all by itself.</p>
+
+        <p>We don't know exactly which word it is without looking it up in the COCA frequency table. But here's what we <em>do</em> know: it's not a common word. Rank ~1100 places it well outside the core vocabulary — this is not "love" or "heart" or "baby." It's a word specific enough to be a deliberate choice, but not so rare as to be a one-off. It's a word she <em>chooses</em> to return to, over and over.</p>
+
+        <p>Think about that. Most songwriters have signature words — Dylan has "joker" and "thief" and "wind" and "rolling." Springsteen has "highway" and "darkness" and "born." Swift, the data suggests, has at least one word that she leans on so heavily it punches a visible dent in a statistical distribution. That's the kind of thing only data can tell you. You could listen to her entire discography and never notice it consciously — but the numbers don't lie.</p>
+
+        <h2>The Poet and the Diarist</h2>
+
+        <p>Dylan and Swift represent two poles of songwriting, and the charts capture both. Dylan's longer sentences and richer vocabulary reflect a writer who treats the song as a canvas — room to paint, room to wander, room to surprise. Swift's shorter, punchier lines and smoother vocabulary curve reflect a writer who treats the song as a message — precise, immediate, unforgettable.</p>
+
+        <p>Neither approach is better. They're just different tools for different jobs. Dylan wants you to think. Swift wants you to feel.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Writing Style Analyzer. All rights reserved. <a href="../../privacy.html">Privacy</a> &middot; <a href="../../terms.html">Terms</a></p>
+    </footer>
+</body>
+</html>

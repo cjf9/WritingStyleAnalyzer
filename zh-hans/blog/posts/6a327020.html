@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="我为什么创建Writing Style Analyzer？从作家梦到文学理论，从Scheme到Python，从一个念头到一个工具。">
+    <title>我创建这个分析工具的理由</title>
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../favicon-180.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-694HG8WN72"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-694HG8WN72');
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="../../index.html" class="logo" title="首页"><img src="../../../favicon-32.png" alt="" class="logo-icon">写作风格分析器</a>
+        <ul>
+            <li><a href="../../about.html">关于</a></li>
+            <li><a href="../index.html">博客</a></li>
+            <li><a href="../../help/index.html">帮助</a></li>
+        </ul>
+        <div class="lang-switch">
+            <a href="/index.html">English</a>
+            <a href="/zh-hans/index.html" class="active">简体</a>
+            <a href="/zh-hant/index.html">繁體</a>
+        </div>
+    </nav>
+
+    <div class="container page-content">
+        <h1>我创建这个分析工具的理由</h1>
+
+        <p>我曾经有一个作家梦。</p>
+
+        <p>想写出感人至深的小说。想让人读到某一行时突然停下来，说不出话。为此付出了很多努力。大学期间，我开始在杂志和网络媒体上发表小说。拿了奖。赚到了稿费。一切都在往好的方向走。</p>
+
+        <p>也正是在那段时间，我接触了大量文学理论。</p>
+
+        <p>在一本接一本的理论著作中，我发现了一件事。那些我从小在心里模模糊糊感受到的、从未对人说过的念头，竟然白纸黑字地印在书里。文学不仅是形象的艺术。文学也是形式的艺术。句之长短。声之高下。这些不是一个写作者的"个人风格问题"。它就是文学本身。就是文学的目的。</p>
+
+        <p>更令我惊奇的是，提出这些观点的作家，以及他们所引用的历史上的作家，恰好都是我喜欢的作家。我辗转找到他们关于语言的论述，一篇一篇地读，每次读完都有一种奇异的感觉：原来从几千年前开始，我最喜欢的那些人，一直在赞同我。</p>
+
+        <p>不是我在追随他们。是他们好像一直在等我。</p>
+
+        <p>于是心里隐隐约约有了一桩决定。这辈子在创作上或许没有太大的天赋。或许做不出什么真正了不起的作品。但一定要在文学理论上留下自己的痕迹。至少，要让这个"学派"的观点被世人看到。不能让它埋没在故纸堆里。</p>
+
+        <p>那时候我正在学编程。为了大规模地分析文本，我开始设计程序。</p>
+
+        <p>回想起来，那个阶段的我仿佛没开智。想不通的事情太多了。做了很多莫名其妙的怪事。比如强迫自己用 Scheme 语言写程序，没有什么实际理由，就是觉得那个语言好看。比如非要手推数值分析的公式，拒绝调用任何现成的工具包。对着《数值分析》的教科书一行一行地写，硬生生手搓出了样条插值算法。现在想起来，真是有病。</p>
+
+        <p>人不可能什么事都做好。至少我没有那个智商。</p>
+
+        <p>后来总算想通了一些。直接把 Python 的 scipy 库拿来用。很快就做出了一个原型。画面粗糙。功能简陋。但它能跑。能把一篇文章丢进去，吐出句子长度的分布和词频的曲线。我当时盯着那个歪歪扭扭的图表看了很久。</p>
+
+        <p>再之后，越想越开。AI 工具出来以后，又借助 AI 把这个原型做成了线上版本。有了界面。有了交互。有了多语言。有了现在大家看到的 WritingStyleAnalyzer.com。</p>
+
+        <p>这个工具本身并不复杂。但它是有效的。非常有效。</p>
+
+        <p>我始终相信一件事。不管 AI 发展到什么程度，人总是需要表达的。而只要需要表达，就一定需要优美的表达。道理很简单。你发出的每一个句子，都在别人心里塑造你是谁。你没有第二次机会。</p>
+
+        <p>今天人们最大的问题，是看不见自己的问题。</p>
+
+        <p>看不见自己写的句子多么丑陋。看不见那些虚浮的套话像水垢一样附着在每一段文字表面。看不见自己写了一辈子，其实从未真正组织过一次简洁有力的表达。这种"看不见"不是审美的问题，是缺少工具。没有人把数据放到你眼前，你就以为自己写得还行。</p>
+
+        <p>而在今后，AI 生成的内容将像潮水一样涌入人类表达的每一个角落。这个问题只会变得更严重。当粗糙的人类写作和流畅的 AI 写作混在一起，你将更难分辨哪些句子是你的、哪些不是，更难看清自己的真实面目。</p>
+
+        <p>所以这个网站需要存在。</p>
+
+        <p>它不是什么宏大的工程。没有服务器集群，没有深度学习模型，没有商业计划。它就是一个网页。你把文字放进去，它给你两条曲线。仅此而已。但这两条曲线能让你看见自己。</p>
+
+        <p>我希望它能成为一个基地。再不济，成为一片废墟。时常有一些后来者经过——那些为文字而生的天选者，那些像我当年一样在黑暗中摸索的人——他们在这里停下来，看到一些遗迹，获得一些力量。然后继续往前走。</p>
+
+        <p>这就够了。</p>
+
+        <p style="color:#999;font-size:0.9rem;">（注：本篇由我口述意思，D老师代笔。我现在是真没功夫写这些屁话。为什么又非要写呢？是因为G老师非要让我写😭）</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Writing Style Analyzer. All rights reserved. <a href="../../privacy.html">Privacy</a> &middot; <a href="../../terms.html">Terms</a></p>
+    </footer>
+</body>
+</html>

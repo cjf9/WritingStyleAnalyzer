@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中英文分析不同之处</title>
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../favicon-180.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-694HG8WN72"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-694HG8WN72');
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="../../index.html" class="logo" title="首页"><img src="../../../favicon-32.png" alt="" class="logo-icon">写作风格分析器</a>
+        <ul>
+            <li><a href="../../about.html">关于</a></li>
+            <li><a href="../index.html">博客</a></li>
+            <li><a href="../../help/index.html">帮助</a></li>
+        </ul>
+        <div class="lang-switch">
+            <a href="/index.html">English</a>
+            <a href="/zh-hans/index.html" class="active">简体</a>
+            <a href="/zh-hant/index.html">繁體</a>
+        </div>
+    </nav>
+
+    <div class="container page-content">
+        <h1>中英文分析不同之处</h1>
+        <p>本站同时支持中文和英文的写作风格分析。虽然两个分析器的图表看上去差不多，但底层的统计方式其实有不少差异。这篇文章就来聊聊，中英文分析在算法层面具体有哪些不同，以及为什么这些不同是合理的。</p>
+
+        <h2>第一张图：句子长度分布</h2>
+        <p>句子长度分析的目的，是帮你直观地看到自己写短句多还是长句多，以及长短句的搭配是否富有变化。</p>
+
+        <p><strong>英文</strong>的统计单位是<strong>单词数</strong>（word count）。一个句子包含多少个单词，这个数字就是它的"长度"。比如 "The cat sat on the mat." 这句话，长度就是 6。这个做法非常自然，因为英文以空格分词，单词是最小的语义单位，数单词就能反映句子的信息密度。</p>
+
+        <p><strong>中文</strong>的统计单位是<strong>字数</strong>（character count）。比如"猫坐在垫子上。"这句话，长度是 6 个字。为什么不按词来数呢？因为中文不像英文那样有天然的分词边界——"猫坐在垫子上"如果按词切分，应该是"猫 / 坐在 / 垫子 / 上"，共 4 个词，但这首先需要一个可靠的分词器，而分词本身就可能引入误差。用字数来统计则简单、确定，每个汉字就是一个明确的计数单元。</p>
+
+        <p>当然，英文的"单词"和中文的"字"本质上是不同的东西。一个英文单词往往已经是一个完整的语义载体，而一个汉字有时是一个词（如"猫"），有时只是词的一部分（如"葡"在"葡萄"中）。好在中文中连绵字毕竟是少数，所以用字数来近似衡量句子的长度，在实践中效果不错。但从严格意义上讲，你需要意识到：<strong>中文句子的"6个字"和英文句子的"6个词"并不对等</strong>。一个字的信息量通常小于一个单词。因此，在看中英文分析结果时，不宜直接比较两个语言的绝对数值，更适合在同类语言内部进行纵向对比。</p>
+
+        <h2>第二张图：词频分析 vs 字频分析</h2>
+        <p>第二张图展示的是你的用词（或用字）偏好——你是大量使用常见词汇，还是经常调用一些低频、精准的表达。</p>
+
+        <p><strong>英文</strong>这边，我们统计的是<strong>单词频率</strong>，但有个关键细节：我们不是按"词形"（word form）来统计的，而是按<strong>"词族"（word family）</strong>来归并的。什么意思呢？举例来说，"run""runs""running""ran"这四个词形，在词形统计中是四个不同的条目，但在我们的词族统计中，它们都归入同一个词族——RUN。之所以这样做，是因为我们认为<strong>词族才真正体现了词汇的多样性</strong>。一个作家频繁使用 run 的不同变体，本质上还是在同一个概念周围打转；而另一个作家用到 run、sprint、jog、dash、gallop 这五个不同的词族，才是真正展现了概念的丰富度。我们想衡量的是你触及了多少<strong>不同的事物和动作</strong>，而不是你在同一个事物上玩了多少语法变体。至于词形变化的多样性（时态、语态、单复数等带来的表达差异），那是另一个有价值的维度，我们计划在后续版本中单独纳入分析。</p>
+
+        <p><strong>中文</strong>这边，我们统计的是<strong>字的频率</strong>（character frequency），而不是词的频率。你可能会问：既然英文用了词族，中文为什么不也用词来统计呢？这主要是两个原因：第一，和前面说的一样，中文分词依赖分词器的准确性，任何分词方案都有争议空间；第二，中文有一个很有意思的特点——<strong>绝大多数字本身就可以是一个"词"</strong>。比如"天""地""人""走""吃""红"等等，单字成词的比例极高。连绵词（如"葡萄""蝴蝶""徘徊"）虽然存在，但在高频使用场景中占比有限。用字频来近似词汇多样性，在中文里比在英文里要可靠得多。</p>
+
+        <h2>总结</h2>
+        <p>两个分析器的差异，归根结底源于中英文两种语言在结构上的根本不同。我们的设计思路是：<strong>尊重每种语言的特点，选择最自然、最少人工干预的统计方式</strong>，而不是强行统一标准。希望这篇文章能帮你更好地理解分析结果背后的逻辑，从而更准确地解读自己的写作风格数据。</p>
+
+        <p>如果你对算法有更多疑问或建议，欢迎通过邮箱联系告诉我们——我们很乐意听到来自真实用户的反馈。</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Writing Style Analyzer. All rights reserved. <a href="../../privacy.html">Privacy</a> &middot; <a href="../../terms.html">Terms</a></p>
+    </footer>
+</body>
+</html>
