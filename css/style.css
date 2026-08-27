@@ -493,3 +493,92 @@ footer a:hover {
         gap: 0.4rem;
     }
 }
+
+/* ── Notice Banner (挂板) ─────────────────────────────── */
+.notice-banner {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 1rem;
+}
+
+.notice-banner.hidden {
+    display: none;
+}
+
+.notice-card {
+    position: relative;
+    background: #fff;
+    border-radius: 14px;
+    max-width: 480px;
+    width: 100%;
+    padding: 2.2rem 1.8rem 1.6rem;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+    text-align: center;
+}
+
+.notice-close {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.7rem;
+    background: none;
+    border: none;
+    font-size: 1.35rem;
+    line-height: 1;
+    color: #999;
+    cursor: pointer;
+    padding: 0.35rem;
+    border-radius: 6px;
+}
+
+.notice-close:hover {
+    color: #e74c3c;
+    background: #f2f2f2;
+}
+
+.notice-text {
+    font-size: 0.92rem;
+    color: #444;
+    line-height: 1.75;
+    text-align: left;
+    margin-bottom: 1.3rem;
+}
+
+.notice-qr img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+
+.notice-qr-label {
+    display: block;
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #3498db;
+}
+
+.notice-qr-tip {
+    display: block;
+    margin-top: 0.7rem;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: #e67e22;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .notice-card {
+        padding: 1.8rem 1.2rem 1.4rem;
+    }
+    .notice-qr img {
+        width: 150px;
+        height: 150px;
+    }
+}

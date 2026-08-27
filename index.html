@@ -23,6 +23,21 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2527306548232906" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!-- Notice Banner (挂板) -->
+    <div id="noticeBanner" class="notice-banner" role="dialog" aria-modal="true" aria-label="重要通知">
+        <div class="notice-card">
+            <button class="notice-close" id="noticeCloseBtn" title="关闭" aria-label="关闭">&times;</button>
+            <div class="notice-text">
+                <p>由于国际流量较差，而推广成本不低，本站可能将于9月份更换域名，使用另一个大站域名，网站将上新算法，优化服务，为文字创作者、文学研究者带来更好的分析工具，同时会额外提供更娱乐化的使用方式，请关注公众号了解后续。</p>
+            </div>
+            <div class="notice-qr">
+                <img src="qbx.jpg" alt="公众号二维码">
+                <span class="notice-qr-label">关注公众号</span>
+                <span class="notice-qr-tip">扫码后点击右上角简体中文即可使用中文分析</span>
+            </div>
+        </div>
+    </div>
+
     <nav>
         <a href="index.html" class="logo" title="Home"><img src="favicon-32.png" alt="" class="logo-icon">Writing Style Analyzer</a>
         <ul>
@@ -109,5 +124,21 @@
     <script src="js/lemmatizer.js"></script>
     <script src="js/main.js"></script>
     <script src="js/share.js"></script>
+    <script>
+      // Notice banner: dismiss on close
+      (function () {
+        var banner = document.getElementById('noticeBanner');
+        var closeBtn = document.getElementById('noticeCloseBtn');
+        if (!banner) return;
+        document.body.style.overflow = 'hidden';
+        function closeBanner() {
+          banner.classList.add('hidden');
+          document.body.style.overflow = '';
+        }
+        if (closeBtn) closeBtn.addEventListener('click', closeBanner);
+        banner.addEventListener('click', function (e) { if (e.target === banner) closeBanner(); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeBanner(); });
+      })();
+    </script>
 </body>
 </html>
