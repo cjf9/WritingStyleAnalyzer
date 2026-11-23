@@ -89,63 +89,39 @@ function finishCard(ctx, W, H, y, owlImg) {
 
   var bottomEdge = H - pad;
 
-  // ── Owl + URL stack dimensions (right side) ────────────────────────
+  // ── Centered owl + URL stack ───────────────────────────────────────
   var owlSize = 90;
   var urlFontSize = 20;
   var owlGap = 10;
   ctx.font = '400 ' + urlFontSize + 'px Inter, PingFang SC, Microsoft YaHei, system-ui, sans-serif';
   var urlText = 'WritingStyleAnalyzer.com';
-  var urlWidth = ctx.measureText(urlText).width;
   var stackH = owlSize + owlGap + urlFontSize + 4;
 
-  // ── Share text (left side) ─────────────────────────────────────────
-  ctx.font = '700 32px Inter, PingFang SC, Microsoft YaHei, Noto Sans SC, system-ui, sans-serif';
-  var line1 = SHARE_CARD_LINE1;
-  var line2 = SHARE_CARD_LINE2;
-  var line2Indent = SHARE_CARD_LINE2_INDENT !== undefined ? SHARE_CARD_LINE2_INDENT : ctx.measureText('I just mapped ').width;
-  var lineHeight = 44;
-  var textBlockH = 2 * lineHeight;
-
-  // ── Vertical centering ─────────────────────────────────────────────
-  var availableH = bottomEdge - y;
-  var maxBlockH = Math.max(textBlockH, stackH);
-  var centerY = y + availableH / 2;
-
-  // ── Draw share text (left, vertically centered) ────────────────────
-  ctx.fillStyle = '#3498db';
-  ctx.font = '700 32px Inter, PingFang SC, Microsoft YaHei, Noto Sans SC, system-ui, sans-serif';
-  var textY = centerY - textBlockH / 2;
-  ctx.fillText(line1, pad, textY + 32);
-  textY += lineHeight;
-  ctx.fillText(line2, pad + line2Indent, textY + 32);
-
-  // ── Draw owl + URL stack (right, vertically centered with text) ────
+  var centerY = y + (bottomEdge - y) / 2;
   var stackTop = centerY - stackH / 2;
-  if (owlImg) {
-    // Position stack so URL stays within canvas
-    var rightMargin = pad + Math.max(0, urlWidth - owlSize);
-    var owlX = W - rightMargin - owlSize;
 
-    // Owl icon
+  ctx.textAlign = 'center';
+
+  if (owlImg) {
+    // Owl icon, horizontally centered
+    var owlX = (W - owlSize) / 2;
     ctx.save();
     ctx.globalAlpha = 0.35;
     ctx.drawImage(owlImg, owlX, stackTop, owlSize, owlSize);
     ctx.restore();
 
-    // URL centered under owl
+    // URL centered under the owl
     ctx.fillStyle = '#3498db';
     ctx.font = '400 ' + urlFontSize + 'px Inter, PingFang SC, Microsoft YaHei, system-ui, sans-serif';
-    var urlX = owlX + (owlSize - urlWidth) / 2;
-    var urlY = stackTop + owlSize + owlGap + urlFontSize;
-    ctx.fillText(urlText, urlX, urlY);
+    ctx.fillText(urlText, W / 2, stackTop + owlSize + owlGap + urlFontSize);
   } else {
-    // No owl — just the URL, vertically centered on right
+    // No owl — just the URL, centered
     ctx.fillStyle = '#3498db';
     ctx.font = '400 ' + urlFontSize + 'px Inter, PingFang SC, Microsoft YaHei, system-ui, sans-serif';
-    var _urlX = W - pad - urlWidth;
-    var _urlY = centerY + urlFontSize / 2;
-    ctx.fillText(urlText, _urlX, _urlY);
+    ctx.fillText(urlText, W / 2, centerY + urlFontSize / 2);
   }
+
+  ctx.textAlign = 'start';
 }
 
 function wrapText(ctx, text, maxWidth) {
