@@ -493,3 +493,69 @@ footer a:hover {
         gap: 0.4rem;
     }
 }
+
+/* ── Ad notice dialog ─────────────────────────────────────── */
+.ad-notice {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 1rem;
+}
+
+.ad-notice[hidden] {
+    display: none;
+}
+
+.ad-notice-card {
+    background: #fff;
+    border-radius: 14px;
+    max-width: 520px;
+    width: 100%;
+    max-height: 88vh;
+    overflow-y: auto;
+    padding: 1.8rem 1.6rem 1.4rem;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+    text-align: left;
+}
+
+.ad-notice-card h2 {
+    font-size: 1.05rem;
+    color: #2c3e50;
+    margin: 0 0 0.9rem;
+    font-weight: 600;
+}
+
+.ad-notice-card p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #444;
+    margin: 0 0 0.9rem;
+}
+
+.ad-notice-card .ad-notice-sep {
+    height: 1px;
+    background: #eee;
+    margin: 1.1rem 0;
+}
+
+.ad-notice-card button {
+    display: block;
+    width: 100%;
+    margin-top: 1.2rem;
+    padding: 0.65rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #3498db;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.ad-notice-card button:hover {
+    background: #2f89c5;
+}
