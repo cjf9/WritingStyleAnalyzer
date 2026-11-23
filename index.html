@@ -30,101 +30,8 @@
       gtag('config', 'G-694HG8WN72');
     </script>
     <script defer src="https://ana.qbzlw.com/track.js" data-key="4d6718756a7fcd5aa240d7a96d0163c1"></script>
-    <style>
-      /* Ad notice dialog — inlined so it never depends on a fresh style.css */
-      .ad-notice {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.55);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10000;
-        padding: 1rem;
-        box-sizing: border-box;
-      }
-      .ad-notice[hidden] { display: none; }
-      .ad-notice .ad-notice-card {
-        background: #fff;
-        border-radius: 14px;
-        max-width: 520px;
-        width: 100%;
-        max-height: 88vh;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        padding: 1.6rem 1.4rem 1.3rem;
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
-        text-align: left;
-        box-sizing: border-box;
-        font-family: Inter, PingFang SC, Microsoft YaHei, system-ui, sans-serif;
-      }
-      .ad-notice .ad-notice-card h2 {
-        font-size: 1rem;
-        line-height: 1.4;
-        color: #2c3e50;
-        margin: 0 0 0.6rem;
-        font-weight: 600;
-      }
-      .ad-notice .ad-notice-card p {
-        font-size: 0.88rem;
-        line-height: 1.7;
-        color: #444;
-        margin: 0 0 0.8rem;
-      }
-      .ad-notice .ad-notice-sep {
-        height: 1px;
-        background: #eee;
-        margin: 1rem 0;
-      }
-      .ad-notice .ad-notice-card button {
-        display: block;
-        width: 100%;
-        margin-top: 1.1rem;
-        padding: 0.7rem 1rem;
-        border: none;
-        border-radius: 8px;
-        background: #3498db;
-        color: #fff;
-        font-size: 0.95rem;
-        font-weight: 600;
-        cursor: pointer;
-        font-family: inherit;
-      }
-      .ad-notice .ad-notice-card button:hover { background: #2f89c5; }
-      @media (max-width: 600px) {
-        .ad-notice { padding: 0.7rem; align-items: flex-end; }
-        .ad-notice .ad-notice-card {
-          max-height: 82vh;
-          border-radius: 12px;
-          padding: 1.2rem 1.05rem 1.1rem;
-        }
-        .ad-notice .ad-notice-card h2 { font-size: 0.95rem; }
-        .ad-notice .ad-notice-card p { font-size: 0.84rem; line-height: 1.65; }
-        .ad-notice .ad-notice-sep { margin: 0.8rem 0; }
-      }
-    </style>
 </head>
 <body>
-    <!-- Ad notice dialog -->
-    <div id="adNotice" class="ad-notice" hidden>
-        <div class="ad-notice-card" role="dialog" aria-modal="true" aria-labelledby="adNoticeTitle">
-            <h2 id="adNoticeTitle">Please be careful with the ads on this page</h2>
-            <p>Please be careful with the advertising content on this page. Do not click on dangerous pages, and do not download or run unknown code. I have not allowed certain types of advertising, but it seems that different regions interpret these types differently.</p>
-
-            <div class="ad-notice-sep"></div>
-
-            <h2>请小心页面上的广告内容</h2>
-            <p>请小心页面上的广告内容，不要点击危险页面，不要下载运行不明代码。我没有允许投放某些类型的广告，但似乎不同地区对这些类型的解释不同。</p>
-
-            <div class="ad-notice-sep"></div>
-
-            <h2>請小心頁面上的廣告內容</h2>
-            <p>請小心頁面上的廣告內容，不要點擊危險頁面，不要下載執行不明程式碼。我沒有允許投放某些類型的廣告，但似乎不同地區對這些類型的解釋不同。</p>
-
-            <button type="button" id="adNoticeClose">OK / 知道了 / 知道了</button>
-        </div>
-    </div>
-
     <nav>
         <a href="index.html" class="logo" title="Home"><img src="favicon-32.png" alt="" class="logo-icon">Writing Style Analyzer</a>
         <ul>
@@ -211,32 +118,5 @@
     <script src="js/lemmatizer.js"></script>
     <script src="js/main.js"></script>
     <script src="js/share.js"></script>
-    <script>
-      // Ad notice dialog: show once, remember dismissal
-      (function () {
-        var KEY = 'adNoticeDismissed';
-        var box = document.getElementById('adNotice');
-        var btn = document.getElementById('adNoticeClose');
-        if (!box || !btn) return;
-
-        var dismissed = false;
-        try { dismissed = localStorage.getItem(KEY) === '1'; } catch (e) {}
-
-        if (!dismissed) {
-          box.hidden = false;
-          document.body.style.overflow = 'hidden';
-        }
-
-        function close() {
-          box.hidden = true;
-          document.body.style.overflow = '';
-          try { localStorage.setItem(KEY, '1'); } catch (e) {}
-        }
-
-        btn.addEventListener('click', close);
-        box.addEventListener('click', function (e) { if (e.target === box) close(); });
-        document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !box.hidden) close(); });
-      })();
-    </script>
 </body>
 </html>
