@@ -30,8 +30,101 @@
       gtag('config', 'G-694HG8WN72');
     </script>
     <script defer src="https://ana.qbzlw.com/track.js" data-key="4d6718756a7fcd5aa240d7a96d0163c1"></script>
+    <style>
+      /* Ad safety notice — must be acknowledged every visit */
+      .ad-warn {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.78);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 20000;
+        padding: 1rem;
+        box-sizing: border-box;
+      }
+      .ad-warn[hidden] { display: none; }
+      .ad-warn .ad-warn-card {
+        background: #fff;
+        border-radius: 14px;
+        max-width: 560px;
+        width: 100%;
+        max-height: 88vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 1.7rem 1.5rem 1.3rem;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+        border-top: 6px solid #e74c3c;
+        box-sizing: border-box;
+        text-align: center;
+        font-family: Inter, PingFang SC, Microsoft YaHei, system-ui, sans-serif;
+      }
+      .ad-warn .ad-warn-card h2 {
+        font-size: 1.02rem;
+        line-height: 1.5;
+        color: #c0392b;
+        margin: 0 0 0.75rem;
+        font-weight: 700;
+      }
+      .ad-warn .ad-warn-card p {
+        font-size: 0.88rem;
+        line-height: 1.7;
+        color: #444;
+        margin: 0 0 0.7rem;
+        text-align: left;
+      }
+      .ad-warn .ad-warn-sep {
+        height: 1px;
+        background: #eee;
+        margin: 0.9rem 0;
+      }
+      .ad-warn .ad-warn-card button {
+        display: block;
+        width: 100%;
+        margin-top: 1.2rem;
+        padding: 0.8rem 1rem;
+        border: none;
+        border-radius: 8px;
+        background: #e74c3c;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        font-family: inherit;
+      }
+      .ad-warn .ad-warn-card button:hover { background: #d0402f; }
+      @media (max-width: 600px) {
+        .ad-warn { padding: 0.8rem; }
+        .ad-warn .ad-warn-card {
+          padding: 1.25rem 1rem 1.1rem;
+          max-height: 84vh;
+        }
+        .ad-warn .ad-warn-card h2 { font-size: 0.96rem; }
+        .ad-warn .ad-warn-card p { font-size: 0.82rem; line-height: 1.65; }
+        .ad-warn .ad-warn-sep { margin: 0.7rem 0; }
+        .ad-warn .ad-warn-card button { font-size: 0.95rem; padding: 0.75rem 1rem; }
+      }
+    </style>
 </head>
 <body>
+    <!-- Ad safety notice -->
+    <div id="adWarn" class="ad-warn">
+        <div class="ad-warn-card" role="dialog" aria-modal="true" aria-labelledby="adWarnTitle">
+            <h2 id="adWarnTitle">请注意分辨页面广告真实性！切勿主动发送任何不明短信，以免遭受电信诈骗！！</h2>
+            <p>请注意分辨页面广告真实性！切勿主动发送任何不明短信，以免遭受电信诈骗！！</p>
+
+            <div class="ad-warn-sep"></div>
+
+            <p>Please verify the authenticity of the ads on this page. Never send any unsolicited text messages on behalf of an ad — this is a common telecom fraud tactic.</p>
+
+            <div class="ad-warn-sep"></div>
+
+            <p>請注意分辨頁面廣告真實性！切勿主動發送任何不明短訊，以免遭受電信詐騙！！</p>
+
+            <button type="button" id="adWarnOk">我已知晓 / I Understand / 我已知曉</button>
+        </div>
+    </div>
+
     <nav>
         <a href="index.html" class="logo" title="首頁"><img src="../favicon-32.png" alt="" class="logo-icon">寫作風格分析器</a>
         <ul>
@@ -113,6 +206,12 @@
         </div>
     </div>
 
+    <!-- Native Ad -->
+    <div class="ad-native" style="max-width:960px;margin:2rem auto 0;padding:0 1rem;">
+        <script async fetchpriority="high" data-cfasync="false" src="https://bauval.org/21/d25d5902e302dcbf9f8467e1316c6d64"></script>
+        <div id="container-d25d5902e302dcbf9f8467e1316c6d64"></div>
+    </div>
+
     <footer>
         <p>&copy; 2026 Writing Style Analyzer. All rights reserved. <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></p>
     </footer>
@@ -131,5 +230,18 @@
     <script src="../js/zh/s2t.js"></script>
     <script src="../js/zh/main.js"></script>
     <script src="../js/share.js"></script>
+    <script>
+      // Ad safety notice: required on every visit, no dismissal memory
+      (function () {
+        var box = document.getElementById('adWarn');
+        var btn = document.getElementById('adWarnOk');
+        if (!box || !btn) return;
+        document.body.style.overflow = 'hidden';
+        btn.addEventListener('click', function () {
+          box.hidden = true;
+          document.body.style.overflow = '';
+        });
+      })();
+    </script>
 </body>
 </html>
