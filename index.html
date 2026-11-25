@@ -35,7 +35,7 @@
       .ad-warn {
         position: fixed;
         inset: 0;
-        background: rgba(0, 0, 0, 0.78);
+        background: rgba(0, 0, 0, 0.72);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -47,81 +47,60 @@
       .ad-warn .ad-warn-card {
         background: #fff;
         border-radius: 14px;
+        border-top: 6px solid #3498db;
         max-width: 560px;
         width: 100%;
         max-height: 88vh;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         padding: 1.7rem 1.5rem 1.3rem;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-        border-top: 6px solid #e74c3c;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
         box-sizing: border-box;
-        text-align: center;
+        text-align: left;
         font-family: Inter, PingFang SC, Microsoft YaHei, system-ui, sans-serif;
       }
-      .ad-warn .ad-warn-card h2 {
-        font-size: 1.02rem;
-        line-height: 1.5;
-        color: #c0392b;
-        margin: 0 0 0.75rem;
-        font-weight: 700;
-      }
       .ad-warn .ad-warn-card p {
-        font-size: 0.88rem;
+        font-size: 0.92rem;
         line-height: 1.7;
-        color: #444;
-        margin: 0 0 0.7rem;
+        color: #c0392b;
+        font-weight: 600;
+        margin: 0 0 1rem;
         text-align: left;
-      }
-      .ad-warn .ad-warn-sep {
-        height: 1px;
-        background: #eee;
-        margin: 0.9rem 0;
       }
       .ad-warn .ad-warn-card button {
         display: block;
         width: 100%;
-        margin-top: 1.2rem;
-        padding: 0.8rem 1rem;
+        margin-top: 1.4rem;
+        padding: 0.85rem 1rem;
         border: none;
         border-radius: 8px;
-        background: #e74c3c;
+        background: #27ae60;
         color: #fff;
         font-size: 1rem;
         font-weight: 700;
         cursor: pointer;
         font-family: inherit;
       }
-      .ad-warn .ad-warn-card button:hover { background: #d0402f; }
+      .ad-warn .ad-warn-card button:hover { background: #219150; }
       @media (max-width: 600px) {
         .ad-warn { padding: 0.8rem; }
         .ad-warn .ad-warn-card {
           padding: 1.25rem 1rem 1.1rem;
           max-height: 84vh;
         }
-        .ad-warn .ad-warn-card h2 { font-size: 0.96rem; }
-        .ad-warn .ad-warn-card p { font-size: 0.82rem; line-height: 1.65; }
-        .ad-warn .ad-warn-sep { margin: 0.7rem 0; }
-        .ad-warn .ad-warn-card button { font-size: 0.95rem; padding: 0.75rem 1rem; }
+        .ad-warn .ad-warn-card p { font-size: 0.86rem; line-height: 1.65; }
+        .ad-warn .ad-warn-card button { font-size: 0.95rem; padding: 0.78rem 1rem; }
       }
     </style>
 </head>
 <body>
     <!-- Ad safety notice -->
     <div id="adWarn" class="ad-warn">
-        <div class="ad-warn-card" role="dialog" aria-modal="true" aria-labelledby="adWarnTitle">
-            <h2 id="adWarnTitle">请注意分辨页面广告真实性！切勿主动发送任何不明短信，以免遭受电信诈骗！！</h2>
+        <div class="ad-warn-card" role="dialog" aria-modal="true" aria-labelledby="adWarnText">
+            <p id="adWarnText">Please verify the authenticity of the ads on this page. Never send any unsolicited text messages on behalf of an ad — this is a common telecom fraud tactic.</p>
             <p>请注意分辨页面广告真实性！切勿主动发送任何不明短信，以免遭受电信诈骗！！</p>
-
-            <div class="ad-warn-sep"></div>
-
-            <p>Please verify the authenticity of the ads on this page. Never send any unsolicited text messages on behalf of an ad — this is a common telecom fraud tactic.</p>
-
-            <div class="ad-warn-sep"></div>
-
             <p>請注意分辨頁面廣告真實性！切勿主動發送任何不明短訊，以免遭受電信詐騙！！</p>
-
-            <button type="button" id="adWarnOk">我已知晓 / I Understand / 我已知曉</button>
+            <button type="button" id="adWarnOk">I Understand / 我已知晓 / 我已知曉</button>
         </div>
     </div>
 
