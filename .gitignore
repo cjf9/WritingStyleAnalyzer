@@ -1,4 +1,5 @@
-﻿_ads_patch.py
+_ads_patch.py
+_ads_add.py
 _apply_all.py
 gui-sock-*
 zz_*
